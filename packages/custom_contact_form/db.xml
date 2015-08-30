@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+
+	<table name="custom_contact_form_submissions">
+		<field name="id" type="I"><UNSIGNED/><KEY/><AUTOINCREMENT/></field>
+		<field name="form_key" type="C" size="100"><NOTNULL/></field>
+		<field name="submitted_at" type="T"><NOTNULL/></field>
+		<field name="ip_address" type="C" size="50"></field>
+		<field name="page_cID" type="I"><UNSIGNED/></field>
+		<field name="page_title" type="C" size="500"></field>
+	</table>
+	
+	<table name="custom_contact_form_submission_fields">
+		<field name="submission_id" type="I"><UNSIGNED/><KEY/></field>
+		<field name="field_name" type="C" size="255"><KEY/></field>
+		<field name="field_value" type="X"></field>
+	</table>
+	
+</schema>

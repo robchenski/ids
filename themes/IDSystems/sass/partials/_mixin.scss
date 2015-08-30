@@ -1,0 +1,169 @@
+// basic reset
+@mixin reset {
+  margin:0;padding:0;
+}
+
+//clear fix
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table; 
+    clear: both;
+  }
+}
+
+// The ultimate PX/REM mixin
+// http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+html {
+  font-size: 62.5%; /* 1 */
+}
+
+@function parseInt($n) { /* 2 */
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px : (); /* 3 */
+  $rem: (); /* 3 */
+
+  @each $value in $values { /* 4 */
+
+    @if $value == 0 or $value == auto { /* 5 */
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);    /* 6 */
+      $val: parseInt($value); /* 6 */
+
+      @if $unit == "px" {  /* 7 */
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == "rem" { /* 7 */
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {     /* 8 */
+    #{$property}: $px;  /* 9 */
+  } @else {
+    #{$property}: $px;  /* 9 */
+    #{$property}: $rem; /* 9 */
+  }
+}
+
+//font-size and line height with rem and px fallback
+@mixin fontsize($size:1.6, $line: $size * 1.5){
+  font-size:   ($size * 10) + px;
+  line-height: ($line * 10) + px;
+  font-size:   $size + rem;
+  line-height: $line + rem;
+}
+
+@mixin font-size($sizeValue: 16){
+    font-size: $sizeValue + px; // Define pixels as fallback for old browsers
+    font-size: ($sizeValue / 10) + rem; // Modern browsers to use rem (relative em)
+}
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+
+
+}
+
+//Visually hidden - not from screen readers
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Black and White - Opacity
+@function black($opacity){
+    @return rgba(0,0,0,$opacity)
+}
+@function white($opacity){
+    @return rgba(255,255,255,$opacity)
+}
+@function gray($opacity){
+    @return rgba(238,238,238,$opacity)
+}
+
+// Cross browser opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Owl carousel "I think"
+@mixin transition($prop, $time, $easing){
+  -webkit-transition: $prop $time $easing;
+  -moz-transition: $prop $time $easing;
+  -ms-transition: $prop $time $easing;
+  -o-transition: $prop $time $easing;
+  transition: $prop $time $easing;
+}
+
+@mixin rounded($value){
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin transform($prop){
+  -webkit-transition: $prop;
+  -moz-transition: $prop;
+  -ms-transition: $prop;
+  -o-transition: $prop;
+  transition: $prop;
+}
+
+@mixin btn{
+  padding: 5px 10px;
+  display: inline-block;
+  border: 0;
+  background-color: $colour-link;
+  @include font-size(14);
+  @include respond-to('xsmall') {
+    @include font-size(24);               
+  }
+  font-family: ZurichBT-Light;
+  color: $white;
+  span {
+    width: 23px;
+    height: 17px;
+    background: transparent url(../images/white-btn-arrow.svg) no-repeat 0 50%;
+    vertical-align: middle;
+    display: inline-block;
+  } 
+}

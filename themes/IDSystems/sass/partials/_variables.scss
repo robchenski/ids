@@ -1,0 +1,77 @@
+/******************************************************************
+Stylesheet: Variables
+******************************************************************/
+
+/*********************
+COLOURS
+Need help w/ choosing your colours? Try this site out:
+http://0to255.com/
+*********************/
+
+/*  BRAND COLOURS*/
+$colour-bg:				#002C43; 
+$colour-bg-2:				#eee; 
+$colour-nav-bg:			#D1D6D9;
+$colour-blue:			#002C43; 
+$colour-caption:		#655243;
+$white:					#fff;  
+//$colour-border:			#335669; 
+$colour-text:			#666; 
+$colour-:				#666;
+$colour-link-nav:		#fff;
+$colour-link:			#FF6310;
+$colour-border:			#D1D6D9;
+$colour-heading-bg:		#33342f; 
+$colour-btn:			#33342f;
+/* BREAK POINTS */
+$breakpoints: (
+  'xsmall':  ( min-width:  321px ),
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  1024px ),
+  'large':  ( min-width: 1200px )
+) !default;
+
+
+/* FONT / TEXT */
+
+/*
+
+$colour-link-1:			#168249;
+$colour-link-2:			#168249;
+$letter-spacing: 		-0.4px;
+
+
+$module-bg:				#edefed;
+
+$colour-red-1:			#FBE3E4;
+$colour-red-2:			#cd0001;
+$colour-green-1:		#E6EFC2;
+$colour-green-2:		#3c7f5c;
+
+$colour-grey-1:			#303231;
+$colour-grey-2:			#565a5c;
+$colour-grey-3:			#c4c4c4;
+$colour-grey-4:			#81888a;
+$colour-grey-5:			#dbe0e0;
+$colour-grey-6:			rgba(77, 80, 81, 0.85);
+$colour-grey-7:			#33332f;
+$colour-grey-8:			#353736;
+$colour-grey-10:		#edefed;
+$colour-grey-11:		#4d5051;
+
+
+
+$block-width:			310px;
+$block-width-sm:		225px;
+$block-width-half:		480px;
+$block-width-full:		100%;
+$radius:				3px;
+$topLeftRadius:			3px;
+$topRightRadius:		3px;
+$bottomLeftRadius:		3px;
+$bottomRightRadius:		3px;
+$controled-img-width-1:	290px;
+$controled-img-width-2:	310px;
+$controled-img-width-3:	150px;
+
+*/

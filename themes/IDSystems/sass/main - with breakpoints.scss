@@ -1,0 +1,383 @@
+// base
+@import "partials/_variables.scss";
+@import "partials/_mixin.scss";
+@import "partials/_normalize.scss";
+$pesticide-debug-outline: true;
+$pesticide-debug-depth: false;
+@import "partials/_pesticide.scss";
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    color: $colour-text;
+}
+
+/* ===================
+    ALL: ID Systems Theme
+   =================== */
+a {
+	color: $white;
+	text-decoration: none;
+	outline: none;
+	&:hover{
+		color:$white;
+		text-decoration:underline;
+	}
+	&:visited{
+		color:$white;
+	}
+}
+
+h1, .h1 {
+	@include font-size(20);
+	font-weight: normal;
+
+	@include respond-to('small') {
+		@include font-size(32);
+		font-weight: normal;
+
+	}
+	@include respond-to('medium') {
+		@include font-size(42);
+		font-weight: normal;
+	}
+}
+
+h2, .h2 {
+	@include font-size(20);
+	font-weight: normal;
+}
+
+h3, .h3, h4, .h4 {
+	@include font-size(16);
+	font-weight: normal;
+}
+
+.wrapper{
+	//width:96%;
+	width: 100%;
+	//margin:0 2%;
+	margin: 0 auto;
+	//padding: 0 percentage(20px / 960px);
+	//@include rem(padding, 0 10px); 
+	//padding: percentage(20px / 960px);
+	@include clearfix();
+	.content {
+		padding: 0 percentage(20px / 960px);
+	}
+	@include respond-to('medium') {
+		width:1000px; 
+		//margin:0 auto;
+	}
+}
+
+#header-container,
+#footer-container,
+.main aside{
+	background: $colour-bg;
+}
+#quote-container {
+	background: $colour-bg-2;
+}
+/*/////////////////////*/
+/******* HEADER *******/
+@import "header.scss";
+
+/*/////////////////////*/
+/******* MAIN *******/
+.home {
+	#main {
+		.left-col {
+			//width: 74%;
+			width: 100%;
+			display: block;
+			@include clearfix();
+			display: inline-block;
+			vertical-align: top;
+			@include respond-to('small') {
+				width: percentage(616px / 960px);
+				display: inline-block;
+			}
+
+			.intro {
+				
+			}
+			.row {
+				border-bottom: 1px solid $colour-border;
+				padding-bottom: 44px;
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+			.inner-left {
+				float: left;
+			}
+			.inner-right {
+				float: right;
+			}
+		}
+		.right-col {
+			img {
+				display: inline-block;
+				max-width: 100%;
+				height: auto;
+			}
+			@include respond-to('small') {
+				width: percentage(320px / 960px);
+				display: inline-block;
+			}
+
+		}
+	}
+}
+
+#main {
+	vertical-align: top;
+	background-color: $white;
+	.callout-links {
+		margin: 0;
+		padding: 0;			
+		@include respond-to('small') {
+			display: table;
+			width: 100%;		
+			li {
+				text-align: center;
+				display: inline-block;
+				width: percentage(290px / 960px);
+				margin-right: percentage(34px / 960px);
+				&:last-child {
+					margin-right: 0;
+				}
+				img {
+					max-width: 100%;
+					display: inline-block;
+					height: auto;
+
+				}
+			}
+		}
+	}
+	.product-tabs-nav {
+		&:first-child {
+			padding: 0;
+		}
+		h1 {
+			margin: 20px 0 0 0;
+			display: inline-block; 
+			font-weight: normal;
+			@include font-size(22);
+		}
+		.resp-tabs-list {
+		    margin: -127px 0 0;
+		    width: 100%;
+		    padding: 0px;
+			display: none;
+		    table-layout: fixed;
+			background-color: $colour-blue;
+			padding: 0 1em;
+			@include respond-to('small') {
+				//width: percentage(715px / 960px);
+			    display: table;
+			}
+			li {
+			    cursor: pointer;			
+				//@include font-size(16);
+				display: table-cell;
+				text-align: center;
+				font-size: 16px;
+				padding: 12px 0;
+				text-align: center;
+				text-decoration: none;
+				color: $white;
+				&.resp-tab-active {
+					color: $colour-link;
+				}
+
+				&.current {
+					background-color: $white;
+					color: $colour-link;
+				}
+				&:hover {
+					background-color: white(0.8);
+					color: $colour-link;
+				}
+				.resp-tab-active {
+					//border: 0;
+				}
+			}
+		}
+		.resp-tabs-container {
+			display: inline-block;
+			.resp-tab-content {
+				border: none;
+				padding: 0;
+			}
+			@include respond-to('small') {
+				width: 100%;
+			}
+		}
+	}
+	.left-col {
+		//width: 74%;
+		width: 100%;
+		display: block;
+		@include clearfix();
+		display: inline-block;
+		vertical-align: top;
+		@include respond-to('xsmall') {
+			width: percentage(715px / 960px);
+			display: inline-block;
+		}
+
+		.intro {
+			
+		}
+		.row {
+			border-bottom: 1px solid $colour-border;
+			padding-bottom: 44px;
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		.case-studies {
+			vertical-align: top;
+			@include clearfix();
+			.inner-left,
+			.inner-right {
+				display: block;
+				width: 100%;
+				@include respond-to('small') {
+					display: inline-block;
+					width: percentage(345px / 715px);
+				}
+				h3 {
+					margin: 0;
+				}
+				img {
+					//float: left;
+					//display: block;
+					//display: table-cell;
+					//width: percentage(345px / 715px);
+					max-width: 100%;
+					height: auto;
+					&:nth-child(even) {
+						//float: right;
+						//margin-right: percentage(25px / 715px);
+					}
+				}
+			}
+			.inner-left {
+				float: left;
+			}
+			.inner-right {
+				float: right;
+			}
+
+		}
+		.gallery {
+			img {
+				float: left;
+				display: block;
+				width: 100%;
+				//width: percentage(715px / 960px);
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+	}
+/*
+
+		@include respond-to('medium') {
+			width:715px;		
+			.inner-left {
+				float: left;
+			}
+			.inner-right {
+				float: right;
+			}
+		}
+*/
+	.right-col {
+		//width: 24%;
+		> div,
+		> nav {
+			margin-top: 20px; 
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+		@include respond-to('xsmall') {
+			width: percentage(225px / 960px);
+			float: right;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.content {
+		width: 100%;
+		padding-bottom: 30px;
+		h2 {
+			margin-top: 20px;
+			margin-bottom: 11px;
+		}
+	}
+
+	.child-nav  {
+		ul {
+			li {
+				a {
+					display: block;
+					font-size: 16px;
+					border-bottom: 1px solid $colour-border;
+					padding: 15px 0 12px 0;
+					color: $colour-blue;
+					&:hover,
+					&.current {
+						color: $colour-blue;
+					}
+					&:before {
+						content: "";
+						display: block;
+						position: relative;
+						float: left;
+						margin-right: 8px;
+						background: transparent url(../images/arrow.png) 0 0 no-repeat;
+						width: 22px;
+						height: 17px;
+						top: 3px;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+/*/////////////////////*/
+/******* TABS  *******/
+@import "partials/_easy-responsive-tabs.scss";
+
+/*/////////////////////*/
+/******* QUOTE *******/
+@import "quote.scss";
+
+/*/////////////////////*/
+/******* FOOTER *******/
+@import "footer.scss";
+
+@import "partials/_coverimage.scss";
+
+
+@import "partials/_print.scss";

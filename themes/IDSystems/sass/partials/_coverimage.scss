@@ -1,0 +1,149 @@
+
+/* large image background div setup */
+.FlexEmbed {
+  display: block;
+  overflow: hidden;
+  /* REMOVED FOR NEGATIVE MARGIN-TOP ON MAIN CONTENT - was hidden behind
+  position: relative;*/
+}
+
+.FlexEmbed:before {
+  content: "";
+  display: block;
+  width: 100%;
+}
+
+.FlexEmbed--3by1:before {
+  padding-bottom: 33.33333%;
+}
+
+.FlexEmbed--2by1:before {
+  padding-bottom: 50%;
+}
+
+.FlexEmbed--16by9:before {
+  padding-bottom: 56.25%;
+}
+
+.FlexEmbed--4by3:before {
+  padding-bottom: 75%;
+}
+.coverimage {
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	max-height: 700px;
+	max-width: 1920px;
+
+}
+
+.custom-navigation a {
+  text-decoration: none;
+  display: block;
+  width: 51px;
+  height: 51px;
+  margin: -20px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.custom-navigation a:before {
+  //font-family: "flexslider-icon";
+  //font-size: 40px;
+  //display: inline-block;
+  content: '';
+  display: block;
+  //color: rgba(0, 0, 0, 0.8);
+  //text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  background: transparent url(../images/previous-arrow.svg) no-repeat 0 0;
+  width: 51px;
+  height: 51px;
+}
+.custom-navigation a.flex-next:before {
+  content: '';
+  display: block;
+  background: transparent url(../images/next-arrow.svg) no-repeat 0 0;
+  width: 51px;
+  height: 51px;
+}
+.custom-navigation .flex-prev {
+  left: 10px;
+}
+.custom-navigation .flex-next {
+  right: 10px;
+  text-align: right;
+}
+.flexslider:hover .custom-navigation .flex-prev {
+  opacity: 0.7;
+  left: 10px;
+}
+.flexslider:hover .custom-navigation .flex-prev:hover {
+  opacity: 1;
+}
+.flexslider:hover .custom-navigation .flex-next {
+  opacity: 0.7;
+  right: 10px;
+}
+.flexslider:hover .custom-navigation .flex-next:hover {
+  opacity: 1;
+}
+.custom-navigation .flex-disabled {
+  opacity: 0!important;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 7%;
+  text-align: center;
+  @include respond-to('small') {
+    bottom: 70px;
+  }  
+}
+.flex-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.flex-control-paging li a {
+  width: 11px;
+  height: 11px;
+  display: block;
+  background: #fff;
+  //background: rgba(0, 0, 0, 0.5);
+  background: white(1);
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.flex-control-paging li a:hover {
+  //background: #333;
+  background: $colour-blue;
+  @include opacity(.7);
+}
+.flex-control-paging li a.flex-active {
+  background: $colour-blue;
+  //background: rgba(0, 0, 0, 0.9);
+  cursor: default;
+  @include opacity(.9);
+}
+

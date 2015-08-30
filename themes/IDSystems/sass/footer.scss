@@ -1,0 +1,98 @@
+#footer-container {
+	footer {
+		.content {
+			padding-top: 20px; 
+			//display: table;
+			&:last-child {
+				p {
+					margin-top: 44px;
+					padding-top: 20px;
+					border-top: 1px dotted white(0.3);
+					color: $white;
+				}
+			}
+			> div {
+				display: table-cell;
+				&.left {
+					//float: left;
+					width: percentage(480px / 960px);				
+					nav {
+						ul {
+							list-style: none;
+						}
+						display: inline-block;
+						vertical-align: top;
+						width: percentage(205px / 455px);
+						margin-right: percentage(40px / 455px);
+							&:nth-child(even) {
+							margin-right: 0;
+						}
+						li {
+							display: block;
+							a {
+								display: inline-block;
+								width: 100%;
+								line-height: 29px;
+								border-bottom: 1px dotted white(0.3);
+								&.current {
+									color: $colour-link;
+								}
+							}
+						}
+					}
+				}
+				&.right {
+					//float: right;
+					width: percentage(460px / 960px);
+					vertical-align: top;
+					//display: inline-block;
+					.item {
+						display: inline-block;
+						width: 100%;
+						text-align: right;
+						&:nth-child(1) {
+							padding-bottom: 28px;
+						}
+						> * {
+							display: inline-block;
+							vertical-align: top;
+						}
+						.sponsors {
+							display: inline-block;
+							color: $white;
+							text-align: center;
+							width: percentage(177px / 460px);				
+							a {
+								margin: 0 1%;
+							}
+						}
+						.social {
+							color: $white;
+							width: percentage(273px / 460px);							
+							a {
+								margin: 0 2%;
+							}
+							p {
+								text-align: left;
+							}
+						}
+						.acredits {
+							padding-top: 28px;
+							border-top: 1px dotted white(0.3);
+							width: 90%;							
+							a {
+								margin: 0 2%;
+							}
+						}
+					}
+				}
+			}
+			
+			#some-el {
+				@include respond-to('medium') {
+					display: none;
+				}
+			}
+		}
+	}	
+}

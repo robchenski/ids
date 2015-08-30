@@ -1,0 +1,59 @@
+<?php  defined('C5_EXECUTE') or die("Access Denied.");
+$al = Loader::helper('concrete/asset_library');
+$ps = Loader::helper('form/page_selector');
+?>
+
+<style type="text/css" media="screen">
+	.ccm-block-field-group h2 { margin-bottom: 5px; }
+	.ccm-block-field-group td { vertical-align: middle; }
+</style>
+
+<div class="ccm-block-field-group">
+	<h2>Link 1</h2>
+	<?php  echo $al->image('field_2_image_fID', 'field_2_image_fID', 'Choose Image', $field_2_image); ?>
+
+	<table border="0" cellspacing="3" cellpadding="0" style="width: 95%;">
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_2_image_internalLinkCID">Link to Page:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $ps->selectPage('field_2_image_internalLinkCID', $field_2_image_internalLinkCID); ?></td>
+		</tr>
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_2_image_altText">Alt Text:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $form->text('field_2_image_altText', $field_2_image_altText, array('style' => 'width: 100%;')); ?></td>
+		</tr>
+	</table>
+</div>
+
+<div class="ccm-block-field-group">
+	<h2>Link 2</h2>
+	<?php  echo $al->image('field_3_image_fID', 'field_3_image_fID', 'Choose Image', $field_3_image); ?>
+
+	<table border="0" cellspacing="3" cellpadding="0" style="width: 95%;">
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_3_image_internalLinkCID">Link to Page:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $ps->selectPage('field_3_image_internalLinkCID', $field_3_image_internalLinkCID); ?></td>
+		</tr>
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_3_image_altText">Alt Text:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $form->text('field_3_image_altText', $field_3_image_altText, array('style' => 'width: 100%;')); ?></td>
+		</tr>
+	</table>
+</div>
+
+<div class="ccm-block-field-group">
+	<h2>Link 3</h2>
+	<?php  echo $al->image('field_4_image_fID', 'field_4_image_fID', 'Choose Image', $field_4_image); ?>
+
+	<table border="0" cellspacing="3" cellpadding="0" style="width: 95%;">
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_4_image_internalLinkCID">Link to Page:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $ps->selectPage('field_4_image_internalLinkCID', $field_4_image_internalLinkCID); ?></td>
+		</tr>
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_4_image_altText">Alt Text:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $form->text('field_4_image_altText', $field_4_image_altText, array('style' => 'width: 100%;')); ?></td>
+		</tr>
+	</table>
+</div>
+
+

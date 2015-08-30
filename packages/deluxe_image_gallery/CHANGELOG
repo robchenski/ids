@@ -1,0 +1,13 @@
+1.6.6 - Prevent javascript conflicts in Concrete5.6+ when more than one addon/theme uses the fancybox effect (e.g. Slate Theme, Sortable Fancybox Gallery, Simple Image Gallery); File Manager no longer offers the useless option to "choose" images when you go there from the block edit dialog.
+1.6.5 - Fixed "class BlockRecord not found" error in Concrete5.6
+1.6.4 - Added optional config settings for new block default values. Also several miscellaneous optimizations and tweaks (IE-only styles now ignored by non-IE browsers; utilize c5's cached width+height values for non-resized images; send file id to view for use by custom templates).
+1.6.3 - Fixed more 5.5 styles in add/edit window; fixed Firefox bug where descriptions/captions were getting pushed to the right; truncate long file names so sorting box looks better; sorting box now expands in height to accommodate very large file sets.
+1.6.2 - Fixed add/edit window styling for Concrete5.5.0, fixed bug in 5.5.0 where error message was displayed when selecting default option in fileset dropdown.
+1.6.1 - Fixed "Divide By Zero" errors in Concrete 5.4.2 (thumbnail width/height controls were always disabled in the edit form)
+1.6 - Added config settings for defaulting titles/captions to file properties and for allowing unescaped html in captions; added clearing div after gallery output; fixed bug when no title exists for an image (added trailing semicolon to &nbsp entity), fixed entity escaping in more places (htmlentities instead of htmlspcialchars, and use APP_CHARSET instead of UTF-8).
+1.05 - Image captions no longer appear when mouse is hovered over thumbnails
+1.04 - Zoomed image no longer resized if width and height are empty/0; multi-line captions displayed if position is "inside" or "over"; bug fixes (IE9 drag-and-drop now works, IE8 no longer shows black borders around lightbox when zooming, non-english character entities properly escaped, image titles default to empty when block first added, images now appear when lightbox and cropping are disabled, cropping is more closely centered).
+1.03 - Removed duplicate "border" attribute from image output
+1.02 - Fixed bug with unicode characters not being displayed properly in titles or captions
+1.01 - When more than one gallery block is on a page, clicking "prev/next" links on zoomed-out images now only flips between images in the same gallery. Also fixed a problem when other lightbox effects on a page would overlap with fancybox effect.
+1.0 - Initial Release (built off of Sortable Fancybox Gallery -- adds cropping, title display in grid, and bulk edit of titles and descriptions from block edit dialog).

@@ -1,0 +1,422 @@
+#header-container {
+	header {
+		.content {
+			@include clearfix();
+			text-align: right;
+			.logo {
+				display: block;
+				//float: left;
+				//width: 100%;
+				vertical-align: bottom;
+				text-align: center;
+				margin: 0 13% 10px 13%;
+				padding-top: 10px;
+				@include respond-to('small') {
+					text-align: left;
+					display: inline-block;
+					float: left;
+					width: percentage(305px / 1000px);
+					margin: 0;
+					padding: 0;
+				}
+				img {
+					vertical-align: bottom;
+					min-width: 160px;
+					max-width: 100%;
+					height: auto;
+				}
+			}
+
+			.header-cta {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				border-bottom: 1px solid $colour-border;
+				//padding: 3% 0 0 0;
+				text-align: center;
+				> div {
+					display: inline-block;
+					padding: 10px 0;
+					&:first-child {
+						//margin: 0 3%;
+						vertical-align: middle;
+						img {
+							max-width: 100%;
+							height: auto;
+							display: inline-block;
+						}
+					}
+				}				
+				@include respond-to('small') {
+					border-top: 1px solid $colour-border;
+					display: inline-block;
+					text-align: right;
+					padding: 33px 0 36px 0;
+					width: 61%;	
+					> div {
+						padding: 0;
+						&:first-child {
+							margin-right: 3%;
+							/*img {
+								max-width: 100%;
+								height: auto;
+								display: inline-block;
+							}*/
+						}
+					}											
+				}			
+				.contact-number {
+					order: 1;
+					vertical-align: middle;
+					a {
+						text-decoration: none;
+						@include font-size(30);
+					}
+				}		
+				.btn-holder {
+					order: 2;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					@include respond-to('small') {
+						display: inline-block;								
+					}
+					a.btn {
+						padding: 5px 10px 5px 5px;
+						display: inline-block;
+						background-color: $colour-link;
+						@include font-size(15);
+							@include respond-to('small') {
+								@include font-size(20);								
+							}
+						font-family: ZurichBT-Light;
+						span {
+							width: 23px;
+							height: 17px;
+							background: transparent url(../images/white-btn-arrow.svg) no-repeat 0 50%;
+							vertical-align: top;
+							display: inline-block;
+							line-height: inherit;
+							@include respond-to('small') {
+								vertical-align: middle;								
+							}
+						} 
+					}
+					.quote-btn {
+						//display: table-cell;
+						text-align: center;
+						margin-right: percentage(20px / 960px);
+						@include respond-to('small') {
+							margin-right: 0;
+							display: inline-block;								
+						}
+					}
+					.download-btn {
+						text-align: center;
+						vertical-align: middle;
+						//width: 50%;
+						//display: table-cell;
+						@include respond-to('small') {
+							display: none;								
+						}
+					}				
+				}		
+	
+			}
+			#site-nav-toggle {
+				@include font-size(14);
+				text-decoration: none;
+				cursor: pointer;
+				padding: 10px 0;
+				display: block;
+				text-align: right;
+				position: absolute;
+				right: percentage(20px / 960px);
+				span.burger-icon {
+					@include burger(25px, 3px, 5px, #fff);
+					display: inline-block !important;
+					vertical-align: middle;
+				}
+				span.burger-text {
+					margin-right: 10px;
+					display: inline-block !important;
+					//position: absolute;
+					//left: 41%;	
+				}
+				@include respond-to('small') {
+					display: none;
+				}
+			}
+			.site-nav {
+				//display: none;
+				//float: right;
+				//clear: both;
+				width: 100%;
+				ul {
+					list-style: none;
+					display: none;
+					text-align: center;
+					li {
+						display: inline-block;
+						@include rem(margin-left, 15px);
+						&:first-child {
+							margin-left: 0;
+						}
+						a {	
+							color: $colour-link-nav;
+							display: block;
+							padding: 5px 0;
+							@include respond-to('small') {
+								padding: 20px 0 15px 0;								
+							}
+							text-align: center;
+							text-decoration: none;
+							&:hover {
+								color: $colour-link;
+								//text-decoration: underline;
+							}
+							&.current,
+							&.nav-path-selected {
+								color: $colour-link;
+								//text-decoration: underline;
+							}
+						}
+					}
+				}
+				@include respond-to('small') {
+					display: inline-block;
+					float: right;
+					clear: both;
+					ul {
+						display: inline-block;
+						text-align: right;
+						li {
+							&:first-child {
+								margin-left: 0;
+							}
+						}
+					}									
+				}
+			}
+		}
+	}	
+}
+
+#nav-toggle {
+	@include font-size(14);
+	text-decoration: none;
+	cursor: pointer;
+	padding: 10px 0;
+	display: block;
+	text-align: right;
+	position: relative;
+	span.burger-icon {
+		@include burger(25px, 3px, 5px, #fff);
+		display: inline-block !important;
+		vertical-align: middle;
+	}
+	span.burger-text {
+		margin-right: 10px;
+		display: inline-block !important;
+		position: absolute;
+		left: 41%;	
+	}
+	@include respond-to('small') {
+		display: none;
+	}
+}
+.product-nav {
+	a {
+		display: block;
+		@include font-size(16);
+		//font-size: 16px;
+
+		// automatic padding - table-cell
+		//padding: 12px 0 12px 0;
+		// uniform padding
+		padding: 12px 12px;
+
+
+		text-align: center;
+		text-decoration: none;
+		&.nav-path-selected,
+		&.current {
+			background-color: $white;
+			color: $colour-link;
+		}
+		&:hover {
+			//background-color: white(0.8);
+			color: $colour-link;
+		}
+	}
+
+	ul {
+		width: 100%;
+		list-style: none;
+		display: none;
+		// for equal size cells
+		//table-layout: fixed;
+		position: relative;
+		margin-top: 14px;
+		//display: none;
+		@include respond-to('small') {
+			display: table;
+		}
+		li {
+			//display: table-cell;
+			&.nav-dropdown {
+				ul {
+					display: none;
+					li {
+						ul {
+							display: none;
+						}
+					}
+				}
+				&.nav-path-selected {
+					> ul {
+						display: none;
+						@include respond-to('small') {
+							display: table;
+						}
+						li.nav-path-selected {
+							a.nav-path-selected {
+								//background-color: $colour-blue;
+								color: $colour-link;
+							}
+							> ul {
+								@include respond-to('small') {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+			@include respond-to('small') {
+				display: table-cell;
+			}
+			> a.current {
+				background-color: $white;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				position: relative;
+
+				@include respond-to('small') {
+					position: absolute;
+				}
+				background-color: $white;
+				width: 100%;
+				left: 0;
+				display: none;
+				li {
+					//display: inline-block;
+					@include respond-to('small') {
+						display: inline-block;
+					}
+				}
+				a {
+					color: $colour-blue;
+					// fit more items in with percentage padding but looks uneven!
+					//padding: 12px 9%;
+					// uniform nav menu padding
+					padding: 12px 0;
+					@include respond-to('small') {
+						padding: 12px 12px;
+					}
+					&:hover {
+						color: $colour-link;
+						//background-color: $colour-blue;
+						//border-bottom: 1px solid $colour-blue;
+						//@include opacity(0.8);	
+					}
+				}
+			}
+		}
+	}
+	/*  edit 1
+	ul {
+		width: 100%;
+		display: table;
+		// for equal size cells
+		//table-layout: fixed;
+		
+		width: 100%;
+		margin-top: 14px;
+		li {
+			display: table-cell;
+			a {
+				display: block;
+				font-size: 16px;
+				padding: 12px 0 27px 0;
+				text-align: center;
+				text-decoration: none;
+				&:hover,
+				&.current {
+					background-color: $white;
+					color: $colour-link;
+				}
+			}
+		}
+	}*/
+	/*	edit 2
+	ul {
+		width: 100%;
+		text-align: justify;
+		margin-top: 14px;
+		position: relative;
+		&:after {
+		    content: '';
+		    display: inline-block;
+		    width: 100%;			
+		}
+		li {
+			display: inline-block;
+			a {
+				//display: block;
+				font-size: 16px;
+				padding: 12px 0 27px 0;
+				text-align: center;
+				text-decoration: none;
+				&:hover,
+				&.current {
+					background-color: $white;
+					color: $colour-link;
+				}
+			}
+			ul {
+				width: auto;
+				//text-align: justify;
+				position: absolute;
+				background-color: $white;
+				top: 50px;
+				left: 0;
+				margin: 0;
+				&:after {
+				    content: '';
+				    display: inline-block;
+				    width: 100%;			
+				}
+				li {
+					display: inline-block;
+				}
+				a {
+					color: $colour-link;
+					display: inline-block;
+					padding: inherit;
+				}			
+			}
+		}
+	}*/
+
+}
+/*
+#product-tabs {
+	.wrapper {
+		background-color: $white;
+		.content {
+		}
+	}
+}*/

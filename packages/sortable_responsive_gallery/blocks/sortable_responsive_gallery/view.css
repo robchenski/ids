@@ -1,0 +1,10 @@
+.sortable_responsive_gallery_container {width:100%;float:none;margin:0 auto;padding: 0}
+.sortable_responsive_gallery_image {margin:0 auto 5px auto;float:left;text-align:center;}
+.sortable_responsive_gallery_image img{max-width:98%;margin:auto;height: auto}
+.rollover {position: relative}
+.hoverimage {width: 32px !important;height: 32px !important; position: absolute; top:10px; left:10px; opacity: .3;-webkit-transition:opacity 0.5s ease;transition:opacity 0.5s ease}
+.rollover:hover .hoverimage {opacity: 1}
+@media screen and (max-width : 800px){.sortable_responsive_gallery_image {float:left;text-align:center;width:50% !important}}
+@media screen and (max-width : 520px){.sortable_responsive_gallery_image {float:none;text-align:center;width:auto !important}.sortable_responsive_gallery_image img{max-width:100%;margin:auto;height: auto}}
+
+

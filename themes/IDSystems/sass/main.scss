@@ -1,0 +1,462 @@
+// base
+@import "partials/_variables.scss";
+@import "partials/_mixin.scss";
+@import "partials/_burger.scss";
+@import "partials/_normalize.scss";
+@import "partials/flexslider.scss";
+//@import "plugins/owl.carousel.scss";
+//@import "plugins/owl.carousel/owl.animate.scss";
+$pesticide-debug-outline: true;
+$pesticide-debug-depth: false;
+//@import "partials/_pesticide.scss";
+@import 'MyFontsWebfontsKit.css';
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*
+,*:before, 
+*:after, {
+  box-sizing: inherit;
+}
+// reset for C5 controls
+.ccm-ui {
+	box-sizing: content-box;
+}
+.ui-dialog a {
+	color: $colour-link;
+	&:hover {
+		color: $colour-link;
+		text-decoration: underline;
+	}
+}
+// Win8 snap window fix
+@-ms-viewport{
+  width: device-width;
+}
+
+::-webkit-input-placeholder { color:transparent; }
+::-moz-placeholder { color:transparent; } /* firefox 19+ */
+:-ms-input-placeholder { color:transparent; } /* ie */
+input:-moz-placeholder { color:transparent; }
+
+.ZurichBT-Light { 
+	font-family: ZurichBT-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+.ZurichBT-Roman { 
+	font-family: ZurichBT-Roman;
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+    color: $colour-text;
+    @include font-size(13);
+    font-family: ZurichBT-Light;
+}
+
+/* ===================
+    ALL: ID Systems Theme
+   =================== */
+a {
+	color: $white;
+	text-decoration: none;
+	outline: none;
+	font-family: ZurichBT-Roman;
+	&:hover{
+		color: $white;
+		text-decoration: underline;
+	}
+	&:visited{
+		color: $white;
+	}
+	&:focus{
+		outline: none;
+	}
+}
+
+h1, .h1 {
+	@include font-size(28);
+	font-weight: normal;
+	padding-top: 20px;
+	margin: 0;
+	color: $colour-blue;
+
+	@include respond-to('small') {
+		@include font-size(32);
+		font-weight: normal;
+
+	}
+	@include respond-to('medium') {
+		@include font-size(42);
+		font-weight: normal;
+	}/**/
+}
+
+h2, .h2 {
+	@include font-size(24);
+	font-weight: normal;
+	color: $colour-blue;
+	margin: 0;
+	@include respond-to('small') {
+		@include font-size(28);
+		font-weight: normal;
+
+	}
+	@include respond-to('medium') {
+		@include font-size(36);
+		font-weight: normal;
+	}
+}
+
+h3, .h3, h4, .h4 {
+	@include font-size(24);
+	font-weight: normal;
+	color: $colour-blue;
+	margin: 0;
+}
+
+ul {
+	//list-style: none;
+}
+
+hr {
+	border-color: $colour-border;
+}
+.wrapper{
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	//@include clearfix();
+	.content {
+		padding: 0 percentage(20px / 960px);
+		//padding: 0 20px;
+		@include clearfix();
+		&.full-width {
+			//padding: 0 percentage(10px / 960px);
+		}
+	}
+	@include respond-to('medium') {
+		width:1000px;
+	}
+}
+// FOR FIXED WIDTH #'n'-container background shrink issue
+.container {
+	width: 100%;
+	//min-width: 1000px;
+	@include respond-to('medium') {
+		min-width:1000px;
+	}
+}
+#main-container {
+	.product-parent &,
+	.product-landing-page & {
+		main.wrapper {
+			margin-top: 0;
+			@include respond-to('small') {
+				margin-top: -4%;
+			}
+		}
+	}
+	&.no-product-tabs,
+	&.default {
+		main.wrapper {
+			margin-top: 0;
+			@include respond-to('small') {
+				margin-top: -4%;
+			}
+		}
+	}
+	header.wrapper {
+//		position: relative;
+		background-color: $white;
+/*		.content {
+//			margin-top: -100px;
+			h1 {
+				margin: 20px 0 0 0;
+				display: inline-block; 
+				font-weight: normal;
+				@include font-size(22);
+			}
+		}
+	*/	margin-top: 0;
+		@include respond-to('medium') {
+			margin-top: -5%;
+		}
+	}
+}
+#header-container,
+#footer-container,
+.main aside{
+	background-color: $colour-bg;
+}
+#header-candy {
+	.wrapper {
+//		position: relative;
+		background-color: $white;
+		.content {
+//			margin-top: -100px;
+			h1 {
+				margin: 20px 0 0 0;
+				display: inline-block; 
+				font-weight: normal;
+				@include font-size(22);
+			}
+		}
+	}
+}
+#quote-container,
+#lower-01-main-container {
+	background-color: $colour-bg-2;
+}
+/*/////////////////////*/
+/******* HEADER *******/
+@import "header.scss";
+
+/*/////////////////////*/
+/******* MAIN *******/
+
+.product-landing-page {
+	#main {
+		.content {
+			.left-col {
+				width: 100%;
+				@include respond-to('small') {
+					width: percentage(585px / 960px);
+					display: inline-block;
+				}
+			}
+			.right-col {
+				width: 100%;
+				@include respond-to('small') {
+					width: percentage(350px / 960px);
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+#main {
+	vertical-align: top;
+	background-color: $white;
+	.left-col {
+		width: 100%;
+		display: block;
+		@include clearfix();
+		//display: inline-block;
+		vertical-align: top;
+
+		@include respond-to('small') {
+			width: percentage(715px / 960px);
+			display: inline-block;
+			float: left;
+		}
+/*		.responsive-nav {
+			width: 100%;
+			@include respond-to('small') {
+				display: none;
+			}
+			li {
+				display: inline-block;
+				a {
+					display: inline-block;
+					padding: 6% 20px;
+					&:first-child {
+						padding-left: 0;
+					}
+				}
+			}
+		}*/
+		.intro {
+			
+		}
+		.row {
+			border-bottom: 1px solid $colour-border;
+			padding-bottom: 44px;
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		.case-studies {
+			vertical-align: top;
+			@include clearfix();
+			.inner {
+				display: block;
+				width: 100%;
+				//@include respond-to('small') {
+					display: inline-block;
+					width: percentage(345px / 715px);
+					min-height: 401px;
+					margin-bottom: 20px;
+				//}
+				a {
+				    color: $colour-text;
+				    @include font-size(13);
+				    font-family: ZurichBT-Light;
+				    &:hover {
+				    	text-decoration: none;
+				    }
+				}
+				h3 {
+					margin: 10px 0 0 0;
+				}
+				p {
+					margin-top: 5px;
+				}
+				img {
+					//float: left;
+					//display: block;
+					//display: table-cell;
+					//width: percentage(345px / 715px);
+					max-width: 100%;
+					height: auto;
+					&:nth-child(even) {
+						//float: right;
+						//margin-right: percentage(25px / 715px);
+					}
+				}
+				&:nth-child(odd) {
+					float: left;
+					clear: left;
+				}
+				&:nth-child(even) {
+					float: right;
+				}
+			}
+
+		}
+
+	}
+	.product-page-gallery {
+		.prev {
+			width: 8px;
+			height: 14px;
+			background: url(../images/left-nav-arrow.png) no-repeat 0 0;
+			display: inline-block;
+			//font-size: 14px;
+			margin: 5px 15px;
+			padding: 4px 7px;
+		}
+		.next {
+			width: 8px;
+			height: 14px;
+			background: url(../images/right-nav-arrow.png) no-repeat 0 0;
+			display: inline-block;
+			//font-size: 14px;
+			margin: 5px 15px;
+			padding: 4px 7px;
+		}
+	}
+/*
+
+		@include respond-to('medium') {
+			width:715px;		
+			.inner-left {
+				float: left;
+			}
+			.inner-right {
+				float: right;
+			}
+		}
+*/
+	.right-col {
+		//width: 24%;
+		> div,
+		> nav {
+			margin-top: 20px; 
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		display: block;
+		width: 100%;
+		vertical-align: top;
+
+		@include respond-to('small') {
+			width: percentage(225px / 960px);
+			float: right;
+			display: inline-block;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.content {
+		width: 100%;
+		padding-bottom: 30px; 
+		a {
+			color: $colour-blue;
+		}
+		h2 {
+			margin-top: 20px;
+			margin-bottom: 11px;
+		}
+	}
+	.child-nav {
+		display: none;
+		@include respond-to('small') {
+			display: block;
+		}
+	}
+	.child-nav,
+	.right-col.sidebar {
+		ul {
+			list-style: none;
+			li {
+				position: relative;
+				a {
+					display: block;
+					font-size: 16px;
+					border-bottom: 1px solid $colour-border;
+					padding: 15px 0 12px 30px;
+					color: $colour-blue;
+					text-decoration: none;
+					
+					//z-index: 1;
+					&:hover,
+					&.current {
+						color: $colour-link;
+					}
+					&:before {
+						content: "";
+						display: block;
+						position: absolute;
+						//z-index: -1;
+						//float: left;
+						//margin-right: 8px;
+						background: transparent url(../images/arrow.png) 0 0 no-repeat;
+						width: 22px;
+						height: 17px;
+						left: 0;
+						//top: 3px;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+/*/////////////////////*/
+/******* HOME PAGE  *******/
+@import "home.scss";
+/*/////////////////////*/
+/******* PRODUCTS *******/
+@import "product.scss";
+
+/*/////////////////////*/
+/******* QUOTE *******/
+@import "quote.scss";
+
+/*/////////////////////*/
+/******* FOOTER *******/
+@import "footer.scss";
+
+@import "partials/_coverimage.scss";
+
+@import "partials/magnific-popup.scss";
+@import "partials/_back_to_top.scss";
+@import "partials/_print.scss";
