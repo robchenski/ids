@@ -25,7 +25,7 @@ $form = Loader::helper('form');
 <fieldset>
 	<legend>Quotation form</legend>
 	<div id="steps">
-		
+<?php /*	*/ ?>	
 		<span>Step 1</span>
 		<section>
 			<h2>Please complete the forms to receive a quotation</h2>
@@ -57,7 +57,7 @@ $form = Loader::helper('form');
 					</p>
 					<p>
 						<?php echo $form->label('email', 'Email *'); ?>
-						<?php echo $form->email('email', null, array('placeholder' => 'Emai *l')); ?>
+						<?php echo $form->email('email', null, array('placeholder' => 'Email *')); ?>
 					</p>
 					<p>
 						<?php echo $form->label('telephone', 'Phone Number *'); ?>
@@ -121,14 +121,6 @@ $form = Loader::helper('form');
 							        echo '<span><a href="' . $page_url . '" target="_blank">' . $page_name . '</a> ' . $form->checkbox('interest[]', $page_name) . '</span>';
 							    }
 							}
-
-/*						<span>Folding doors <?php echo $form->checkbox('interest[]', 'Folding doors'); ?></span>
-						<span>Sliding doors <?php echo $form->checkbox('interest[]', 'Sliding doors'); ?></span>
-						<span>Slide and Turn Systems <?php echo $form->checkbox('interest[]', 'Slide and Turn Systems'); ?></span>
-						<span>Moveable Walls <?php echo $form->checkbox('interest[]', 'Moveable Walls'); ?></span>
-						<span>Windows <?php echo $form->checkbox('interest[]', 'Windows'); ?></span>
-						<span>Roofs <?php echo $form->checkbox('interest[]', 'Roofs'); ?></span>
-						<span>Glass Balustrades <?php echo $form->checkbox('interest[]', 'Glass Balustrades'); ?></span>*/
 							 ?>
 
 					</p>
@@ -332,50 +324,50 @@ $form = Loader::helper('form');
 							    <div><strong>Open Out</strong></div>
 							</div>
 							<div class="frow">
-							    <div><input name="folding_doors_A_Qty" id="folding_doors_A_Qty" type="text"></div>
+							    <div><?php echo $form->text('folding_doors_A_Qty'); ?></div>
 							    <div>A</div>
-							    <div><input name="folding_doors_A_Width" id="folding_doors_A_Width" type="text"></div>
-							    <div><input name="folding_doors_A_Height" id="folding_doors_A_Height" type="text"></div>
-							    <div><input name="folding_doors_A_Left" id="folding_doors_A_Left" type="text"></div>
-							    <div><input name="folding_doors_A_Right" id="folding_doors_A_Right" type="text"></div>
-							    <div><input name="folding_doors_A_Open" id="folding_doors_A_Open_In" value="In" type="radio"></div>
-							    <div><input name="folding_doors_A_Open" id="folding_doors_A_Open_Out" value="Out" type="radio"></div>
+							    <div><?php echo $form->text('folding_doors_A_Width'); ?></div>
+							    <div><?php echo $form->text('folding_doors_A_Height'); ?></div>
+							    <div><?php echo $form->text('folding_doors_A_Left'); ?></div>
+							    <div><?php echo $form->text('folding_doors_A_Right'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_A_Open', 'In'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_A_Open', 'Out'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="folding_doors_B_Qty" id="folding_doors_B_Qty" type="text"></div>
+							    <div><?php echo $form->text('folding_doors_B_Qty'); ?></div>
 							    <div>B</div>
-							    <div><input name="folding_doors_B_Width" id="folding_doors_B_Width" type="text"></div>
-							    <div><input name="folding_doors_B_Height" id="folding_doors_B_Height" type="text"></div>
-							    <div><input name="folding_doors_B_Left" id="folding_doors_B_Left" type="text"></div>
-							    <div><input name="folding_doors_B_Right" id="folding_doors_B_Right" type="text"></div>
-							    <div><input name="folding_doors_B_Open" id="folding_doors_B_Open_In" value="In" type="radio"></div>
-							    <div><input name="folding_doors_B_Open" id="folding_doors_B_Open_Out" value="Out" type="radio"></div>
+							    <div><?php echo $form->text('folding_doors_B_Width'); ?></div>
+							    <div><?php echo $form->text('folding_doors_B_Height'); ?></div>
+							    <div><?php echo $form->text('folding_doors_B_Left'); ?></div>
+							    <div><?php echo $form->text('folding_doors_B_Right'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_B_Open', 'In'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_B_Open', 'Out'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="folding_doors_C_Qty" id="folding_doors_C_Qty" type="text"></div>
+							    <div><?php echo $form->text('folding_doors_C_Qty'); ?></div>
 							    <div>C</div>
-							    <div><input name="folding_doors_C_Width" id="folding_doors_C_Width" type="text"></div>
-							    <div><input name="folding_doors_C_Height" id="folding_doors_C_Height" type="text"></div>
-							    <div><input name="folding_doors_C_Left" id="folding_doors_C_Left" type="text"></div>
-							    <div><input name="folding_doors_C_Right" id="folding_doors_C_Right" type="text"></div>
-							    <div><input name="folding_doors_C_Open" id="folding_doors_C_Open_In" value="In" type="radio"></div>
-							    <div><input name="folding_doors_C_Open" id="folding_doors_C_Open_Out" value="Out" type="radio"></div>
+							    <div><?php echo $form->text('folding_doors_C_Width'); ?></div>
+							    <div><?php echo $form->text('folding_doors_C_Height'); ?></div>
+							    <div><?php echo $form->text('folding_doors_C_Left'); ?></div>
+							    <div><?php echo $form->text('folding_doors_C_Right'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_C_Open', 'In'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_C_Open', 'Out'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="folding_doors_D_Qty" id="folding_doors_D_Qty" type="text"></div>
+							    <div><?php echo $form->text('folding_doors_D_Qty'); ?></div>
 							    <div>D</div>
-							    <div><input name="folding_doors_D_Width" id="folding_doors_D_Width" type="text"></div>
-							    <div><input name="folding_doors_D_Height" id="folding_doors_D_Height" type="text"></div>
-							    <div><input name="folding_doors_D_Left" id="folding_doors_D_Left" type="text"></div>
-							    <div><input name="folding_doors_D_Right" id="folding_doors_D_Right" type="text"></div>
-							    <div><input name="folding_doors_D_Open" id="folding_doors_D_Open_In" value="In" type="radio"></div>
-							    <div><input name="folding_doors_D_Open" id="folding_doors_D_Open_Out" value="Out" type="radio"></div>
+							    <div><?php echo $form->text('folding_doors_D_Width'); ?></div>
+							    <div><?php echo $form->text('folding_doors_D_Height'); ?></div>
+							    <div><?php echo $form->text('folding_doors_D_Left'); ?></div>
+							    <div><?php echo $form->text('folding_doors_D_Right'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_D_Open', 'In'); ?></div>
+							    <div><?php echo $form->radio('folding_doors_D_Open', 'Out'); ?></div>
 							</div>
 							<div class="frow special-reqs">
 							    <div>
-							        <label>Special requirements:</label> Please detail any options that you would like quoted such as a special colour, blinds and alternative glass specifications etc<br /><br />
-							        
-							        <textarea name="folding_doors_Special" id="folding_doors_Special"></textarea></div>
+							        <?php echo $form->label('folding_doors_Special', 'Special requirements:'); ?> Please detail any options that you would like quoted such as a special colour, blinds and alternative glass specifications etc<br /><br />
+							        <?php echo $form->textarea('folding_doors_Special'); ?>
+							    </div>
 							</div>
 
 
@@ -414,239 +406,144 @@ $form = Loader::helper('form');
 							    <div><strong>Panels</strong></div>
 							</div>
 							<div class="frow" data-set="A">
-							    <div><input name="Grand_Slider_A_Qty" type="text" id="Grand_Slider_A_Qty"></div>
+							    <div><?php echo $form->text('Grand_Slider_A_Qty', ''); ?></div>
 							    <div>A</div>
-							    <div><input name="Grand_Slider_A_Width" type="text" id="Grand_Slider_A_Width"></div>
-							    <div><input type="text" name="Grand_Slider_A_Height" id="Grand_Slider_A_Height"></div>
-							    <div><input type="text" name="Grand_Slider_A_Panels" id="Grand_Slider_A_Panels" class="spinner" value=""></div>
+							    <div><?php echo $form->text('Grand_Slider_A_Width', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_A_Height', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_A_Panels', '', array('class' => 'spinner')); ?></div>
 							    <div>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_1" name="Grand_Slider_A_Panel_1">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_2" name="Grand_Slider_A_Panel_2">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_3" name="Grand_Slider_A_Panel_3" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_4" name="Grand_Slider_A_Panel_4" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_5" name="Grand_Slider_A_Panel_5" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_6" name="Grand_Slider_A_Panel_6" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_7" name="Grand_Slider_A_Panel_7" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_A_Panel_8" name="Grand_Slider_A_Panel_8" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_2', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_3', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_4', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_5', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_6', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_7', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_A_Panel_8', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
 							    </div>
 							</div>
 							<div class="frow" data-set="B">
-							    <div><input type="text" name="Grand_Slider_B_Qty" id="Grand_Slider_B_Qty"></div>
+							    <div><?php echo $form->text('Grand_Slider_B_Qty', ''); ?></div>
 							    <div>B</div>
-							    <div><input type="text" name="Grand_Slider_B_Width" id="Grand_Slider_B_Width"></div>
-							    <div><input type="text" name="Grand_Slider_B_Height" id="Grand_Slider_B_Height"></div>
-							    <div><input type="text" name="Grand_Slider_B_Panels" id="Grand_Slider_B_Panels" class="spinner" value=""></div>
+							    <div><?php echo $form->text('Grand_Slider_B_Width', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_B_Height', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_B_Panels', '', array('class' => 'spinner')); ?></div>
 							    <div>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_1" name="Grand_Slider_B_Panel_1">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_2" name="Grand_Slider_B_Panel_2">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_3" name="Grand_Slider_B_Panel_3" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_4" name="Grand_Slider_B_Panel_4" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_5" name="Grand_Slider_B_Panel_5" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_6" name="Grand_Slider_B_Panel_6" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_7" name="Grand_Slider_B_Panel_7" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_B_Panel_8" name="Grand_Slider_B_Panel_8" disabled="disabled">
-							           <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_2', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_3', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_4', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_5', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_6', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_7', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_B_Panel_8', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
 							    </div>
 							</div>
 							<div class="frow" data-set="C">
-							    <div><input type="text" name="Grand_Slider_C_Qty" id="Grand_Slider_C_Qty"></div>
+							    <div><?php echo $form->text('Grand_Slider_C_Qty', ''); ?></div>
 							    <div>C</div>
-							    <div> <input type="text" name="Grand_Slider_C_Width" id="Grand_Slider_C_Width"></div>
-							    <div><input type="text" name="Grand_Slider_C_Height" id="Grand_Slider_C_Height"></div>
-							    <div><input type="text" name="Grand_Slider_C_Panels" id="Grand_Slider_C_Panels" class="spinner" value=""></div>
+							    <div><?php echo $form->text('Grand_Slider_C_Width', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_C_Height', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_C_Panels', '', array('class' => 'spinner')); ?></div>
 							    <div>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_1" name="Grand_Slider_C_Panel_1">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_2" name="Grand_Slider_C_Panel_2">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_3" name="Grand_Slider_C_Panel_3" disabled="disabled">
-							           <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_4" name="Grand_Slider_C_Panel_4" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_5" name="Grand_Slider_C_Panel_5" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_6" name="Grand_Slider_C_Panel_6" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_7" name="Grand_Slider_C_Panel_7" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_C_Panel_8" name="Grand_Slider_C_Panel_8" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_2', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_3', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_4', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_5', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_6', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_7', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_C_Panel_8', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
 							    </div>
 							</div>
 							<div class="frow" data-set="D">
-							    <div><input type="text" name="Grand_Slider_D_Qty" id="Grand_Slider_D_Qty"></div>
+							    <div><?php echo $form->text('Grand_Slider_D_Qty', ''); ?></div>
 							    <div>D</div>
-							    <div><input type="text" name="Grand_Slider_D_Width" id="Grand_Slider_D_Width"></div>
-							    <div><input type="text" name="Grand_Slider_D_Height" id="Grand_Slider_D_Height"></div>
-							    <div><input type="text" name="Grand_Slider_D_Panels" id="Grand_Slider_D_Panels" class="spinner" value=""></div>
+							    <div><?php echo $form->text('Grand_Slider_D_Width', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_D_Height', ''); ?></div>
+							    <div><?php echo $form->text('Grand_Slider_D_Panels', '', array('class' => 'spinner')); ?></div>
 							    <div>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_1" name="Grand_Slider_D_Panel_1">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_2" name="Grand_Slider_D_Panel_2">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_3" name="Grand_Slider_D_Panel_3" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_4" name="Grand_Slider_D_Panel_4" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_5" name="Grand_Slider_D_Panel_5" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_6" name="Grand_Slider_D_Panel_6" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_7" name="Grand_Slider_D_Panel_7" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
-							        <select class="mainInp panelOpt" id="Grand_Slider_D_Panel_8" name="Grand_Slider_D_Panel_8" disabled="disabled">
-							            <option value="Pick"></option>
-							            <option value="Fixed">F</option>
-							            <option value="Sliding">S</option>
-							            <option value="Wall">W</option>
-							        </select>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_2', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_3', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_4', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_5', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_6', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_7', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
+							        <?php
+echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt', 'disabled' => 'disabled')); 
+?>
 							    </div>
 							</div>
 							<div class="frow special-reqs">
 							    <div>
 							    	<p>Each square on the right indicates a panel, please indicate, using the drop down box, which panels are sliding (S), which are fixed (F) and indicate any extended track sections with a W to indicate where panels slide behind a wall. In extended track circumstances, please provide the width excluding the extended track. For assistance please contact our sales department on 01603 408804.</p>
 
-							        <label>Special requirements:</label> Please detail any options that you would like quoted such as a special colour and alternative glass specifications etc. Please note integrated Venetian Blinds are incompatible with Sliding Doors.<br /><br />
-							        <textarea name="folding_doors_Special" id="folding_doors_Special"></textarea></div>
+							        <?php echo $form->label('sliding_doors_Special', 'Special requirements:'); ?> Please detail any options that you would like quoted such as a special colour and alternative glass specifications etc. Please note integrated Venetian Blinds are incompatible with Sliding Doors.<br /><br />
+							        <?php echo $form->textarea('sliding_doors_Special'); ?>
+							    </div>
 							</div>
 						</div>
 					</div>
@@ -682,41 +579,42 @@ $form = Loader::helper('form');
 							    <div><strong>No. Panels Right (viewed from inside)</strong></div>
 							</div>
 							<div class="frow">
-							    <div><input name="sliding_turn_A_Qty" id="sliding_turn_A_Qty" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_A_Qty'); ?></div>
 							    <div>Set A</div>
-							    <div><input name="sliding_turn_A_Width" id="sliding_turn_A_Width" type="text"></div>
-							    <div><input name="sliding_turn_A_Height" id="sliding_turn_A_Height" type="text"></div>
-							    <div><input name="sliding_turn_A_Left" id="sliding_turn_A_Left" type="text"></div>
-							    <div><input name="sliding_turn_A_Right" id="sliding_turn_A_Right" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_A_Width'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_A_Height'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_A_Left'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_A_Right'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="sliding_turn_B_Qty" id="sliding_turn_B_Qty" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_B_Qty'); ?></div>
 							    <div>Set B</div>
-							    <div><input name="sliding_turn_B_Width" id="sliding_turn_B_Width" type="text"></div>
-							    <div><input name="sliding_turn_B_Height" id="sliding_turn_B_Height" type="text"></div>
-							    <div><input name="sliding_turn_B_Left" id="sliding_turn_B_Left" type="text"></div>
-							    <div><input name="sliding_turn_B_Right" id="sliding_turn_B_Right" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_B_Width'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_B_Height'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_B_Left'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_B_Right'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="sliding_turn_C_Qty" id="sliding_turn_C_Qty" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_C_Qty'); ?></div>
 							    <div>Set C</div>
-							    <div><input name="sliding_turn_C_Width" id="sliding_turn_C_Width" type="text"></div>
-							    <div><input name="sliding_turn_C_Height" id="sliding_turn_C_Height" type="text"></div>
-							    <div><input name="sliding_turn_C_Left" id="sliding_turn_C_Left" type="text"></div>
-							    <div><input name="sliding_turn_C_Right" id="sliding_turn_C_Right" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_C_Width'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_C_Height'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_C_Left'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_C_Right'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="sliding_turn_D_Qty" id="sliding_turn_D_Qty" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_D_Qty'); ?></div>
 							    <div>Set D</div>
-							    <div><input name="sliding_turn_D_Width" id="sliding_turn_D_Width" type="text"></div>
-							    <div><input name="sliding_turn_D_Height" id="sliding_turn_D_Height" type="text"></div>
-							    <div><input name="sliding_turn_D_Left" id="sliding_turn_D_Left" type="text"></div>
-							    <div><input name="sliding_turn_D_Right" id="sliding_turn_D_Right" type="text"></div>
+							    <div><?php echo $form->text('sliding_turn_D_Width'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_D_Height'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_D_Left'); ?></div>
+							    <div><?php echo $form->text('sliding_turn_D_Right'); ?></div>
 							</div>
 							<div class="frow special-reqs">
 							    <div>
-							        <label>Special requirements:</label> Please detail any options that you would like quoted such as a special colour, alternative glass specifications etc<br /><br />
-							        <textarea name="sliding_turn_Special" id="sliding_turn_Special"></textarea></div>
+							        <?php echo $form->label('sliding_turn_Special', 'Special requirements:'); ?> Please detail any options that you would like quoted such as a special colour, alternative glass specifications etc<br /><br />
+							        <?php echo $form->textarea('sliding_turn_Special'); ?>
+							    </div>
 							</div>
 
 
@@ -755,41 +653,41 @@ $form = Loader::helper('form');
 							    <div><strong>No. Panels Right (viewed from inside)</strong></div>
 							</div>
 							<div class="frow">
-							    <div><input name="HSW_A_Qty" id="HSW_A_Qty" type="text"></div>
+							    <div><?php echo $form->text('HSW_A_Qty'); ?></div>
 							    <div>Set A</div>
-							    <div><input name="HSW_A_Width" id="HSW_A_Width" type="text"></div>
-							    <div><input name="HSW_A_Height" id="HSW_A_Height" type="text"></div>
-							    <div><input name="HSW_A_Left" id="HSW_A_Left" type="text"></div>
-							    <div><input name="HSW_A_Right" id="HSW_A_Right" type="text"></div>
+							    <div><?php echo $form->text('HSW_A_Width'); ?></div>
+							    <div><?php echo $form->text('HSW_A_Height'); ?></div>
+							    <div><?php echo $form->text('HSW_A_Left'); ?></div>
+							    <div><?php echo $form->text('HSW_A_Right'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="HSW_B_Qty" id="HSW_B_Qty" type="text"></div>
+							    <div><?php echo $form->text('HSW_B_Qty'); ?></div>
 							    <div>Set B</div>
-							    <div><input name="HSW_B_Width" id="HSW_B_Width" type="text"></div>
-							    <div><input name="HSW_B_Height" id="HSW_B_Height" type="text"></div>
-							    <div><input name="HSW_B_Left" id="HSW_B_Left" type="text"></div>
-							    <div><input name="HSW_B_Right" id="HSW_B_Right" type="text"></div>
+							    <div><?php echo $form->text('HSW_B_Width'); ?></div>
+							    <div><?php echo $form->text('HSW_B_Height'); ?></div>
+							    <div><?php echo $form->text('HSW_B_Left'); ?></div>
+							    <div><?php echo $form->text('HSW_B_Right'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="HSW_C_Qty" id="HSW_C_Qty" type="text"></div>
+							    <div><?php echo $form->text('HSW_C_Qty'); ?></div>
 							    <div>Set C</div>
-							    <div> <input name="HSW_C_Width" id="HSW_C_Width" type="text"></div>
-							    <div><input name="HSW_C_Height" id="HSW_C_Height" type="text"></div>
-							    <div><input name="HSW_C_Left" id="HSW_C_Left" type="text"></div>
-							    <div><input name="HSW_C_Right" id="HSW_C_Right" type="text"></div>
+							    <div><?php echo $form->text('HSW_C_Width'); ?></div>
+							    <div><?php echo $form->text('HSW_C_Height'); ?></div>
+							    <div><?php echo $form->text('HSW_C_Left'); ?></div>
+							    <div><?php echo $form->text('HSW_C_Right'); ?></div>
 							</div>
 							<div class="frow">
-							    <div><input name="HSW_D_Qty" id="HSW_D_Qty" type="text"></div>
+							    <div><?php echo $form->text('HSW_D_Qty'); ?></div>
 							    <div>Set D</div>
-							    <div><input name="HSW_D_Width" id="HSW_D_Width" type="text"></div>
-							    <div><input name="HSW_D_Height" id="HSW_D_Height" type="text"></div>
-							    <div><input name="HSW_D_Left" id="HSW_D_Left" type="text"></div>
-							    <div><input name="HSW_D_Right" id="HSW_D_Right" type="text"></div>
+							    <div><?php echo $form->text('HSW_D_Width'); ?></div>
+							    <div><?php echo $form->text('HSW_D_Height'); ?></div>
+							    <div><?php echo $form->text('HSW_D_Left'); ?></div>
+							    <div><?php echo $form->text('HSW_D_Right'); ?></div>
 							</div>
 							<div class="frow special-reqs">
 							    <div>
-							        <label>Special requirements:</label> Please detail any options that you would like quoted such as a special colour, blinds and alternative glass specifications etc<br /><br />
-							        <textarea name="sliding_turn_Special" id="sliding_turn_Special"></textarea></div>
+							        <?php echo $form->label('moveable_walls_Special', 'Special requirements:'); ?> Please detail any options that you would like quoted such as a special colour, blinds and alternative glass specifications etc<br /><br />
+							        <?php echo $form->textarea('moveable_walls_Special'); ?></div>
 							</div>
 
 
@@ -812,7 +710,7 @@ $form = Loader::helper('form');
 					<div class="form-holder">
 						<div class="form-inner">
 							<div class="frow headings">
-							    <div><label>Upload your Windows file(s)</label></div>
+							    <div><?php echo $form->label('window_designs', 'Upload your Windows file(s)'); ?></div>
 							</div>
 							<div class="frow">
 							    <div>
@@ -836,7 +734,7 @@ $form = Loader::helper('form');
 					<div class="form-holder">
 						<div class="form-inner">
 							<div class="frow headings">
-							    <div><label>Upload your Roof file(s)</label></div>
+							    <div><?php echo $form->label('roof_designs', 'Upload your Roof file(s)'); ?></div>
 							</div>
 							<div class="frow">
 							    <div>
@@ -852,81 +750,81 @@ $form = Loader::helper('form');
 					</div>
 					<div class="form-holder">
 						<div class="form-inner">
-<div class="frow headings">
-                            <div><strong>Qty</strong></div>
-                            <div><strong>Position</strong></div>
-                            <div><strong>Overall Width</strong></div>
-                            <div><strong>Internal or External</strong></div>
-                            <div><strong>Handrail Required</strong></div>
-                        </div>
-                        <div class="frow">
-                            <div><input name="Glass_Balustrades_A_Qty" id="Glass_Balustrades_A_Qty" type="text"></div>
-                            <div>Set A</div>
-                            <div><input name="Glass_Balustrades_A_Width" id="Glass_Balustrades_A_Width" type="text"></div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_A_Internal_External" name="Glass_Balustrades_A_Internal_External">
-                                    <option value="Internal">Internal</option>
-                                    <option value="External">External</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_A_Handrail" name="Glass_Balustrades_A_Handrail">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="frow">
-                            <div><input name="Glass_Balustrades_B_Qty" id="Glass_Balustrades_B_Qty" type="text"></div>
-                            <div>Set B</div>
-                            <div><input name="Glass_Balustrades_B_Width" id="Glass_Balustrades_B_Width" type="text"></div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_B_Internal_External" name="Glass_Balustrades_B_Internal_External">
-                                    <option value="Internal">Internal</option>
-                                    <option value="External">External</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_B_Handrail" name="Glass_Balustrades_B_Handrail">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="frow">
-                            <div><input name="Glass_Balustrades_C_Qty" id="Glass_Balustrades_C_Qty" type="text"></div>
-                            <div>Set C</div>
-                            <div> <input name="Glass_Balustrades_C_Width" id="Glass_Balustrades_C_Width" type="text"></div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_C_Internal_External" name="Glass_Balustrades_C_Internal_External">
-                                    <option value="Internal">Internal</option>
-                                    <option value="External">External</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_C_Handrail" name="Glass_Balustrades_C_Handrail">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="frow">
-                            <div><input name="Glass_Balustrades_D_Qty" id="Glass_Balustrades_D_Qty" type="text"></div>
-                            <div>Set D</div>
-                            <div><input name="Glass_Balustrades_D_Width" id="Glass_Balustrades_D_Width" type="text"></div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_D_Internal_External" name="Glass_Balustrades_D_Internal_External">
-                                    <option value="Internal">Internal</option>
-                                    <option value="External">External</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select class="mainInp" id="Glass_Balustrades_D_Handrail" name="Glass_Balustrades_D_Handrail">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
+							<div class="frow headings">
+	                            <div><strong>Qty</strong></div>
+	                            <div><strong>Position</strong></div>
+	                            <div><strong>Overall Width</strong></div>
+	                            <div><strong>Internal or External</strong></div>
+	                            <div><strong>Handrail Required</strong></div>
+	                        </div>
+	                        <div class="frow">
+	                            <div><?php echo $form->text('Glass_Balustrades_A_Qty'); ?></div>
+	                            <div>Set A</div>
+	                            <div><?php echo $form->text('Glass_Balustrades_A_Width'); ?></div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_A_Internal_External" name="Glass_Balustrades_A_Internal_External">
+	                                    <option value="Internal">Internal</option>
+	                                    <option value="External">External</option>
+	                                </select>
+	                            </div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_A_Handrail" name="Glass_Balustrades_A_Handrail">
+	                                    <option value="Yes">Yes</option>
+	                                    <option value="No">No</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="frow">
+	                            <div><?php echo $form->text('Glass_Balustrades_B_Qty'); ?></div>
+	                            <div>Set B</div>
+	                            <div><?php echo $form->text('Glass_Balustrades_B_Width'); ?></div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_B_Internal_External" name="Glass_Balustrades_B_Internal_External">
+	                                    <option value="Internal">Internal</option>
+	                                    <option value="External">External</option>
+	                                </select>
+	                            </div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_B_Handrail" name="Glass_Balustrades_B_Handrail">
+	                                    <option value="Yes">Yes</option>
+	                                    <option value="No">No</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="frow">
+	                            <div><?php echo $form->text('Glass_Balustrades_C_Qty'); ?></div>
+	                            <div>Set C</div>
+	                            <div> <?php echo $form->text('Glass_Balustrades_C_Width'); ?></div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_C_Internal_External" name="Glass_Balustrades_C_Internal_External">
+	                                    <option value="Internal">Internal</option>
+	                                    <option value="External">External</option>
+	                                </select>
+	                            </div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_C_Handrail" name="Glass_Balustrades_C_Handrail">
+	                                    <option value="Yes">Yes</option>
+	                                    <option value="No">No</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="frow">
+	                            <div><?php echo $form->text('Glass_Balustrades_D_Qty'); ?></div>
+	                            <div>Set D</div>
+	                            <div><?php echo $form->text('Glass_Balustrades_D_Width'); ?></div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_D_Internal_External" name="Glass_Balustrades_D_Internal_External">
+	                                    <option value="Internal">Internal</option>
+	                                    <option value="External">External</option>
+	                                </select>
+	                            </div>
+	                            <div>
+	                                <select class="mainInp" id="Glass_Balustrades_D_Handrail" name="Glass_Balustrades_D_Handrail">
+	                                    <option value="Yes">Yes</option>
+	                                    <option value="No">No</option>
+	                                </select>
+	                            </div>
+	                        </div>
 
 						</div>
 					</div>

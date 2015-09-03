@@ -7,7 +7,6 @@
 <![endif]-->
 <html lang="en" class="no-js">
 <head>
-	<?php Loader::element('header_required'); ?>
 		<!-- viewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +18,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->getThemePath(); ?>/css/main.css?version=<?php echo CUSTOM_THEME_ASSET_CACHE_BUST_NUMBER; ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->getThemePath(); ?>/css/tinymce.css?version=<?php echo CUSTOM_THEME_ASSET_CACHE_BUST_NUMBER; ?>" />
+	<?php Loader::element('header_required'); ?>
 </head>
 	<body class="<?php echo $c->getCollectionTypeHandle()?> <?php echo $c->getCollectionHandle()?>">
 		

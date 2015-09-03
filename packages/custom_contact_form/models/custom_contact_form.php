@@ -151,6 +151,10 @@ class CustomContactForm {
 				'delivery_postcode' => array('label' => 'Delivery Postcode:'),
 
 
+aluminium_interest Aluminium Bi-fold doors
+timber_interest Timber Bi-fold doors
+composite_interest Composite Bi-fold doors
+
 
 
 
