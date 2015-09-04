@@ -25,7 +25,13 @@ $form = Loader::helper('form');
 <fieldset>
 	<legend>Quotation form</legend>
 	<div id="steps">
-<?php /*		*/ ?>
+		<div class="validation-errors" style="display:none">
+			<span class="validation-error-header"></span>
+			<ul class="error-items">
+
+			</ul>
+		</div>
+<?php /*		
 		<span>Step 1</span>
 		<section>
 			<h2>Please complete the forms to receive a quotation</h2>
@@ -258,7 +264,7 @@ $form = Loader::helper('form');
 				</div>
 			</div>
 		</section>
-
+*/ ?>
 		<span>Step 3</span>
 		<section>
 			<div class="row interest" id="stage_3">
@@ -444,7 +450,7 @@ echo $form->select('Grand_Slider_A_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 							    <div><?php echo $form->text('Grand_Slider_B_Width', ''); ?></div>
 							    <div><?php echo $form->text('Grand_Slider_B_Height', ''); ?></div>
 							    <div><?php echo $form->number('Grand_Slider_B_Panels', '', array('class' => 'spinner2', 'min' => '2', 'max' => '8')); ?></div>
-							    <div>
+							    <div class="divslector">
 							        <?php
 echo $form->select('Grand_Slider_B_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
 ?>

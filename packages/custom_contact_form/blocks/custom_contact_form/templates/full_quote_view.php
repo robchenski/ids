@@ -83,12 +83,6 @@ $(document).ready(function() {
 			<?php endforeach; ?>
 		</ul>
 	</div>
-	<div class="validation-errors" style="display:none">
-		<span class="validation-error-header"></span>
-		<ul class="error-items">
-
-		</ul>
-	</div>
 
 	<form id="stepped-form" method="post" action="<?php echo $this->action('submit'); ?>" <?php echo $has_files ? 'enctype="multipart/form-data"' : ''; ?>>
 		
@@ -123,8 +117,7 @@ $(document).ready(function() {
 	</form>
 
 <script>
-    $(function ()
-    {
+    $(function () {
         $("#steps").steps({
             headerTag: "span",
             titleTemplate: '#title#',
@@ -147,11 +140,7 @@ $(document).ready(function() {
 		        {
 		            return true;
 		        }
-		        // Forbid suppressing "Warning" step if the user is to young
-/*			        if (newIndex === 3 && Number($("#age").val()) < 18)
-		        {
-		            return false;
-		        }*/
+
 		        var form = $("#stepped-form");
 	            form.validate().settings.ignore = ":disabled,:hidden";
 	            return form.valid();
@@ -160,18 +149,7 @@ $(document).ready(function() {
 		    onStepChanged: function (event, currentIndex, priorIndex)
 		    {
 
-/*			        // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-		        if (currentIndex === 2 && priorIndex === 3)
-		        {
-		            $(this).steps("previous");
-		            return;
-		        }
-		 
-		        // Suppress (skip) "Warning" step if the user is old enough.
-		        if (currentIndex === 2 && Number($("#age").val()) >= 18)
-		        {
-		            $(this).steps("next");
-		        }*/
+
 		    },
 		    onFinishing: function (event, currentIndex)
 		    {
@@ -294,7 +272,7 @@ $(document).ready(function() {
 			    if (validationErrors) {
 			    	var message = validationErrors == 1
 			        	? 'You missed 1 field. It has been listed below'
-			        	: 'You missed ' + validationErrors + ' fields. They have been listed below';
+			        	: 'You missed ' + validationErrors + ' fields on this step. They have been listed below';
 			    	$("span.validation-error-header").html(message);
 			    	//$("div.errors").show();
 				} else {

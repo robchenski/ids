@@ -390,9 +390,17 @@
 					//&:nth-child(2), &:nth-child(7), &:nth-child(8) {text-align: center;}
 					padding: 0 2px;
 					text-align: center;
-					input[type="text"],
-					input[type="number"] {
+					input[type="text"] {
 						width: 90%;
+					    color: $colour-text;
+					    @include font-size(13);
+					    font-family: ZurichBT-Light;
+					}
+					input[type="number"] {
+						width: 100%;
+					@include respond-to('small') {
+						width: 90%;
+					}
 					    color: $colour-text;
 					    @include font-size(13);
 					    font-family: ZurichBT-Light;
@@ -452,14 +460,23 @@
 					> div {
 						vertical-align: middle;
 						&:nth-child(2) {width: 60%;}
-						&:nth-child(5) {width: 65%;}
+						&:nth-child(5) {width: 100%;
+							@include respond-to('small') {
+								width: 65%;
+							}
+						}
 						&:nth-child(6) {
+
+
+	//@include respond-to('medium') {
 							//display: table;
 							width: 290%;
 							> select {
 								//width: 100%;
 								//display: table-cell;
 							}
+	//}
+
 						}
 					}
 				}
