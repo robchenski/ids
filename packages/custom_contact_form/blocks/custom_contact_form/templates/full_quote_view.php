@@ -83,6 +83,12 @@ $(document).ready(function() {
 			<?php endforeach; ?>
 		</ul>
 	</div>
+	<div class="validation-errors" style="display:none">
+		<span class="validation-error-header"></span>
+		<ul class="error-items">
+
+		</ul>
+	</div>
 
 	<form id="stepped-form" method="post" action="<?php echo $this->action('submit'); ?>" <?php echo $has_files ? 'enctype="multipart/form-data"' : ''; ?>>
 		
@@ -112,12 +118,6 @@ $(document).ready(function() {
 		<div class="processing" style="display: none;">
 			<img src="<?php echo ASSETS_URL_IMAGES; ?>/throbber_white_16.gif" width="16" height="16" alt="<?php echo t('form processing indicator'); ?>" />
 			<span><?php echo t('Processing...'); ?></span>
-		</div>
-		<div class="validation-errors" style="display:none">
-			<span class="validation-error-header"></span>
-			<ul class="error-items">
-
-			</ul>
 		</div>
 
 	</form>
@@ -287,14 +287,14 @@ $(document).ready(function() {
 					required: "Please enter your Postcode.",
 				},
 			},
-			errorClass: "ids-form-input-error",
-			validClass: "ids-form-input-valid",
+			//errorClass: "ids-form-input-error",
+			//validClass: "ids-form-input-valid",
 			showErrors: function(errorMap, errorList) {
 			    var validationErrors = this.numberOfInvalids();
 			    if (validationErrors) {
 			    	var message = validationErrors == 1
-			        	? 'You missed 1 field. It has been highlighted'
-			        	: 'You missed ' + validationErrors + ' fields. They have been highlighted';
+			        	? 'You missed 1 field. It has been listed below'
+			        	: 'You missed ' + validationErrors + ' fields. They have been listed below';
 			    	$("span.validation-error-header").html(message);
 			    	//$("div.errors").show();
 				} else {
@@ -303,24 +303,22 @@ $(document).ready(function() {
 			    this.defaultShowErrors();
 			},
 		    highlight: function(element, errorClass, validClass) {
-		    	$(element).addClass(errorClass).removeClass(validClass);
+		    	//$(element).addClass(errorClass).removeClass(validClass);
 
 		        if ($(element).is(":checkbox"))
 		        {
-		            $($(element)).parents( "p" ).addClass(errorClass).removeClass(validClass);
-		        //    $($(element)).parents( "p" ).find( "label" ).addClass(errorClass).removeClass(validClass);
+		        //DISABLED DUE TO WEIRD STYLING    $($(element)).parents( "p" ).addClass(errorClass).removeClass(validClass);
 		        }
-		   		// $(element.form).find("label[for=" + element.id + "]").addClass(errorClass);
+		   		//OLD EXAMPLE $(element.form).find("label[for=" + element.id + "]").addClass(errorClass);
 			},
 			unhighlight: function(element, errorClass, validClass) {
 		    	$(element).removeClass(errorClass).addClass(validClass);
 
 		        if ($(element).is(":checkbox"))
 		        {
-		            $($(element)).parents( "p" ).removeClass(errorClass).addClass(validClass);
-		        //    $($(element)).parents( "p" ).find( "label" ).removeClass(errorClass).addClass(validClass);
+		        //DISABLED DUE TO WEIRD STYLING    $($(element)).parents( "p" ).removeClass(errorClass).addClass(validClass);
 		        }
-		   		// $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+		   		//OLD EXAMPLE $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
 			},
 			errorLabelContainer: ".validation-errors",
 			wrapper: "li"
@@ -329,13 +327,14 @@ $(document).ready(function() {
 
 
 
-
+// REDUNDANT .spinner() call - somewhat as using the number input on the form for 'small screen' / mobile support
+// with class spinner2
         $( ".spinner" ).spinner({
         	min   :   2,
         	max   :   8
         });
 		$('.ui-spinner-button').click(function() { $(this).siblings('input').change(); });
-        $( ".spinner").change(function(){
+        $( ".spinner,.spinner2").change(function(){
         	var panels = $(this).val();
         	var i = 1;
 

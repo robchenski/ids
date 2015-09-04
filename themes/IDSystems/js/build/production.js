@@ -5080,11 +5080,11 @@ $(function() {
 // Back to top floating link
 $(function() {
     // browser window scroll (in pixels) after which the "back to top" link is shown
-    var offset = 300,
+    var offset = 600,
         //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
         offset_opacity = 800,
         //duration of the top scrolling animation (in ms)
-        scroll_top_duration = 600,
+        scroll_top_duration = 500,
         //grab the "back to top" link
         $back_to_top = $('.cd-top');
 
@@ -5105,8 +5105,16 @@ $(function() {
         );
     });
 });
+/****************
+
+DON'T FORGET THERE'S WIDTH related scripts in the folowing location too:
+
+/blocks/product_tabs_content/view.php
+
+enquire.register("screen and (min-width: 767px)
 
 
+****************/
 // Gallery slider
 /*
 $(function() {

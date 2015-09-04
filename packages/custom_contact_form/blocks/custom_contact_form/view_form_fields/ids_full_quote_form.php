@@ -25,7 +25,7 @@ $form = Loader::helper('form');
 <fieldset>
 	<legend>Quotation form</legend>
 	<div id="steps">
-<?php /*	*/ ?>	
+<?php /*		*/ ?>
 		<span>Step 1</span>
 		<section>
 			<h2>Please complete the forms to receive a quotation</h2>
@@ -410,7 +410,7 @@ $form = Loader::helper('form');
 							    <div>A</div>
 							    <div><?php echo $form->text('Grand_Slider_A_Width', ''); ?></div>
 							    <div><?php echo $form->text('Grand_Slider_A_Height', ''); ?></div>
-							    <div><?php echo $form->text('Grand_Slider_A_Panels', '', array('class' => 'spinner')); ?></div>
+							    <div><?php echo $form->number('Grand_Slider_A_Panels', '', array('class' => 'spinner2', 'min' => '2', 'max' => '8')); ?></div>
 							    <div>
 							        <?php
 echo $form->select('Grand_Slider_A_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
@@ -443,7 +443,7 @@ echo $form->select('Grand_Slider_A_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 							    <div>B</div>
 							    <div><?php echo $form->text('Grand_Slider_B_Width', ''); ?></div>
 							    <div><?php echo $form->text('Grand_Slider_B_Height', ''); ?></div>
-							    <div><?php echo $form->text('Grand_Slider_B_Panels', '', array('class' => 'spinner')); ?></div>
+							    <div><?php echo $form->number('Grand_Slider_B_Panels', '', array('class' => 'spinner2', 'min' => '2', 'max' => '8')); ?></div>
 							    <div>
 							        <?php
 echo $form->select('Grand_Slider_B_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
@@ -476,7 +476,7 @@ echo $form->select('Grand_Slider_B_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 							    <div>C</div>
 							    <div><?php echo $form->text('Grand_Slider_C_Width', ''); ?></div>
 							    <div><?php echo $form->text('Grand_Slider_C_Height', ''); ?></div>
-							    <div><?php echo $form->text('Grand_Slider_C_Panels', '', array('class' => 'spinner')); ?></div>
+							    <div><?php echo $form->number('Grand_Slider_C_Panels', '', array('class' => 'spinner2', 'min' => '2', 'max' => '8')); ?></div>
 							    <div>
 							        <?php
 echo $form->select('Grand_Slider_C_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
@@ -509,7 +509,7 @@ echo $form->select('Grand_Slider_C_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 							    <div>D</div>
 							    <div><?php echo $form->text('Grand_Slider_D_Width', ''); ?></div>
 							    <div><?php echo $form->text('Grand_Slider_D_Height', ''); ?></div>
-							    <div><?php echo $form->text('Grand_Slider_D_Panels', '', array('class' => 'spinner')); ?></div>
+							    <div><?php echo $form->number('Grand_Slider_D_Panels', '', array('class' => 'spinner2', 'min' => '2', 'max' => '8')); ?></div>
 							    <div>
 							        <?php
 echo $form->select('Grand_Slider_D_Panel_1', array('Pick' => '', 'Fixed' => 'F', 'Sliding' => 'S', 'Wall' => 'W'), null, array('class' => 'mainInp panelOpt')); 
@@ -762,16 +762,14 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 	                            <div>Set A</div>
 	                            <div><?php echo $form->text('Glass_Balustrades_A_Width'); ?></div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_A_Internal_External" name="Glass_Balustrades_A_Internal_External">
-	                                    <option value="Internal">Internal</option>
-	                                    <option value="External">External</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_A_Internal_External', array('Internal' => 'Internal', 'External' => 'External'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_A_Handrail" name="Glass_Balustrades_A_Handrail">
-	                                    <option value="Yes">Yes</option>
-	                                    <option value="No">No</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_A_Handrail', array('Yes' => 'Yes', 'No' => 'No'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                        </div>
 	                        <div class="frow">
@@ -779,16 +777,14 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 	                            <div>Set B</div>
 	                            <div><?php echo $form->text('Glass_Balustrades_B_Width'); ?></div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_B_Internal_External" name="Glass_Balustrades_B_Internal_External">
-	                                    <option value="Internal">Internal</option>
-	                                    <option value="External">External</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_B_Internal_External', array('Internal' => 'Internal', 'External' => 'External'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_B_Handrail" name="Glass_Balustrades_B_Handrail">
-	                                    <option value="Yes">Yes</option>
-	                                    <option value="No">No</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_B_Handrail', array('Yes' => 'Yes', 'No' => 'No'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                        </div>
 	                        <div class="frow">
@@ -796,16 +792,14 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 	                            <div>Set C</div>
 	                            <div> <?php echo $form->text('Glass_Balustrades_C_Width'); ?></div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_C_Internal_External" name="Glass_Balustrades_C_Internal_External">
-	                                    <option value="Internal">Internal</option>
-	                                    <option value="External">External</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_C_Internal_External', array('Internal' => 'Internal', 'External' => 'External'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_C_Handrail" name="Glass_Balustrades_C_Handrail">
-	                                    <option value="Yes">Yes</option>
-	                                    <option value="No">No</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_C_Handrail', array('Yes' => 'Yes', 'No' => 'No'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                        </div>
 	                        <div class="frow">
@@ -813,16 +807,14 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 	                            <div>Set D</div>
 	                            <div><?php echo $form->text('Glass_Balustrades_D_Width'); ?></div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_D_Internal_External" name="Glass_Balustrades_D_Internal_External">
-	                                    <option value="Internal">Internal</option>
-	                                    <option value="External">External</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_D_Internal_External', array('Internal' => 'Internal', 'External' => 'External'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                            <div>
-	                                <select class="mainInp" id="Glass_Balustrades_D_Handrail" name="Glass_Balustrades_D_Handrail">
-	                                    <option value="Yes">Yes</option>
-	                                    <option value="No">No</option>
-	                                </select>
+	                                <?php
+echo $form->select('Glass_Balustrades_D_Handrail', array('Yes' => 'Yes', 'No' => 'No'), null, array('class' => 'mainInp')); 
+?>
 	                            </div>
 	                        </div>
 
