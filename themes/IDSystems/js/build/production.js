@@ -4992,6 +4992,11 @@ $(function() {
     }
    // $('.date-picker').datepicker("setDate", currentDate);
 });
+
+
+/*********************************
+MENUS
+*********************************/
 // Toggle product nav menu - on click
 $(function() {
     // Site nav
@@ -5014,6 +5019,8 @@ $(function() {
         menu_prod_nav.slideToggle();
     });
 });
+
+// check the sizes below !!!
 $(window).resize(function(){
     var w = $(window).width();
     // Site nav
@@ -5025,6 +5032,10 @@ $(window).resize(function(){
         menu_prod_nav.removeAttr('style');
     }
 }); 
+
+/********************************
+FORMS / QUOTES
+********************************/
 // Show / Hide text box if e.g. 'Other' checkbox is checked - Quick quote form
 $(function() {
 	// console.log( "ready!" );
@@ -5077,7 +5088,109 @@ $(function() {
     }).change();
 });
 
-// Back to top floating link
+$(function() {
+    // console.log( "ready!" );
+    $('#interest_bi_fold_doors').change(function(){
+        if ($(this).is(':checked')) {
+            $('#folding_doors_quote_details').show();
+            console.log( "bi fold IS checked" );
+            console.log( $('#folding_doors_quote_details').css('display') );
+        } 
+        else {
+            $('#folding_doors_quote_details').hide();
+            console.log( "bi fold NOT checked" );
+            console.log( $('#folding_doors_quote_details').css('display') );
+        }
+    }).change();
+    $('#interest_sliding_doors').change(function(){
+        if ($(this).is(':checked')) {
+            $('#sliding_doors_quote_details').show();
+        } 
+        else {
+            $('#sliding_doors_quote_details').hide();
+        }
+    }).change();
+    $('#interest_sliding_turn_systems').change(function(){
+        if ($(this).is(':checked')) {
+            $('#slide_turn_systems_quote_details').show();
+        } 
+        else {
+            $('#slide_turn_systems_quote_details').hide();
+        }
+    }).change();
+    $('#interest_moveable_walls').change(function(){
+        if ($(this).is(':checked')) {
+            $('#moveable_walls_quote_details').show();
+        } 
+        else {
+            $('#moveable_walls_quote_details').hide();
+        }
+    }).change();
+    $('#interest_windows').change(function(){
+        if ($(this).is(':checked')) {
+            $('#windows_quote_details').show();
+        } 
+        else {
+            $('#windows_quote_details').hide();
+        }
+    }).change();
+    $('#interest_roofs').change(function(){
+        if ($(this).is(':checked')) {
+            $('#roofs_quote_details').show();
+        } 
+        else {
+            $('#roofs_quote_details').hide();
+        }
+    }).change();
+    $('#interest_balustrades').change(function(){
+        if ($(this).is(':checked')) {
+            $('#glass_balustrades_quote_details').show();
+        } 
+        else {
+            $('#glass_balustrades_quote_details').hide();
+        }
+    }).change();
+});
+
+//ROOOOOOOOOOOOOTATE
+(function ($) {
+  $.fn.rotateTableCellContent = function (options) {
+  /*
+  Version 1.0
+  7/2011
+  Written by David Votrubec (davidjs.com) and
+  Michal Tehnik (@Mictech) for ST-Software.com
+  */
+
+        var cssClass = ((options) ? options.className : false) || "vertical";
+
+        var cellsToRotate = $('.' + cssClass, this);
+
+        var betterCells = [];
+        cellsToRotate.each(function () {
+            var cell = $(this)
+          , newText = cell.text()
+          , height = '100%'
+          , width = cell.width()
+          , newDiv = $('<div>', { height: width, width: height })
+          , newInnerDiv = $('<div>', { text: newText, 'class': 'rotated' });
+console.log(height);
+            newDiv.append(newInnerDiv);
+
+            betterCells.push(newDiv);
+        });
+
+        cellsToRotate.each(function (i) {
+            $(this).html(betterCells[i]);
+        });
+    };
+})(jQuery);
+$(function() {
+  //  $('.headings').rotateTableCellContent({className: 'vert'});
+});
+/**********************
+Back to top floating link
+**********************/
 $(function() {
     // browser window scroll (in pixels) after which the "back to top" link is shown
     var offset = 600,

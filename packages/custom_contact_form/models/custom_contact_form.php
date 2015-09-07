@@ -151,14 +151,176 @@ class CustomContactForm {
 				'delivery_postcode' => array('label' => 'Delivery Postcode:'),
 
 
-aluminium_interest Aluminium Bi-fold doors
-timber_interest Timber Bi-fold doors
-composite_interest Composite Bi-fold doors
+'aluminium_interest' => array('label' => 'Aluminium Bi-fold doors'),
+'timber_interest Timber' => array('label' => 'Bi-fold doors'),
+'composite_interest Composite' => array('label' => 'Bi-fold doors'),
 
+'folding_doors_A_Qty' => array('label' => 'folding_doors_A_Qty'),
+'folding_doors_A_Width' => array('label' => 'folding_doors_A_Width'),
+'folding_doors_A_Height' => array('label' => 'folding_doors_A_Height'),
+'folding_doors_A_Left' => array('label' => 'folding_doors_A_Left'),
+'folding_doors_A_Right' => array('label' => 'folding_doors_A_Right'),
+'folding_doors_A_Open' => array('label' => 'folding_doors_A_Open'),
 
+'folding_doors_B_Qty' => array('label' => 'folding_doors_B_Qty'),
+'folding_doors_B_Width' => array('label' => 'folding_doors_B_Width'),
+'folding_doors_B_Height' => array('label' => 'folding_doors_B_Height'),
+'folding_doors_B_Left' => array('label' => 'folding_doors_B_Left'),
+'folding_doors_B_Right' => array('label' => 'folding_doors_B_Right'),
+'folding_doors_B_Open' => array('label' => 'folding_doors_B_Open'),
+
+'folding_doors_C_Qty' => array('label' => 'folding_doors_C_Qty'),
+'folding_doors_C_Width' => array('label' => 'folding_doors_C_Width'),
+'folding_doors_C_Height' => array('label' => 'folding_doors_C_Height'),
+'folding_doors_C_Left' => array('label' => 'folding_doors_C_Left'),
+'folding_doors_C_Right' => array('label' => 'folding_doors_C_Right'),
+'folding_doors_C_Open' => array('label' => 'folding_doors_C_Open'),
+
+'folding_doors_D_Qty' => array('label' => 'folding_doors_D_Qty'),
+'folding_doors_D_Width' => array('label' => 'folding_doors_D_Width'),
+'folding_doors_D_Height' => array('label' => 'folding_doors_D_Height'),
+'folding_doors_D_Left' => array('label' => 'folding_doors_D_Left'),
+'folding_doors_D_Right' => array('label' => 'folding_doors_D_Right'),
+'folding_doors_D_Open' => array('label' => 'folding_doors_D_Open'),
+
+'folding_doors_Special' => array('label' => 'Special Bi-fold requirements:'),
+
+'sliding_doors_interest' => array('label' => 'Sliding doors'),
+
+'Grand_Slider_A_Qty' => array('label' => 'Grand_Slider_A_Qty'),
+'Grand_Slider_A_Width' => array('label' => 'Grand_Slider_A_Width'),
+'Grand_Slider_A_Height' => array('label' => 'Grand_Slider_A_Height'),
+'Grand_Slider_A_Panels' => array('label' => 'Grand_Slider_A_Panels'),
+'Grand_Slider_A_Panel_1' => array('label' => 'Grand_Slider_A_Panel_1'),
+'Grand_Slider_A_Panel_2' => array('label' => 'Grand_Slider_A_Panel_2'),
+'Grand_Slider_A_Panel_3' => array('label' => 'Grand_Slider_A_Panel_3'),
+'Grand_Slider_A_Panel_4' => array('label' => 'Grand_Slider_A_Panel_4'),
+'Grand_Slider_A_Panel_5' => array('label' => 'Grand_Slider_A_Panel_5'),
+'Grand_Slider_A_Panel_6' => array('label' => 'Grand_Slider_A_Panel_6'),
+'Grand_Slider_A_Panel_7' => array('label' => 'Grand_Slider_A_Panel_7'),
+'Grand_Slider_A_Panel_8' => array('label' => 'Grand_Slider_A_Panel_8'),
+
+'Grand_Slider_B_Qty' => array('label' => 'Grand_Slider_B_Qty'),
+'Grand_Slider_B_Width' => array('label' => 'Grand_Slider_B_Width'),
+'Grand_Slider_B_Height' => array('label' => 'Grand_Slider_B_Height'),
+'Grand_Slider_B_Panels' => array('label' => 'Grand_Slider_B_Panels'),
+'Grand_Slider_B_Panel_1' => array('label' => 'Grand_Slider_B_Panel_1'),
+'Grand_Slider_B_Panel_2' => array('label' => 'Grand_Slider_B_Panel_2'),
+'Grand_Slider_B_Panel_3' => array('label' => 'Grand_Slider_B_Panel_3'),
+'Grand_Slider_B_Panel_4' => array('label' => 'Grand_Slider_B_Panel_4'),
+'Grand_Slider_B_Panel_5' => array('label' => 'Grand_Slider_B_Panel_5'),
+'Grand_Slider_B_Panel_6' => array('label' => 'Grand_Slider_B_Panel_6'),
+'Grand_Slider_B_Panel_7' => array('label' => 'Grand_Slider_B_Panel_7'),
+'Grand_Slider_B_Panel_8' => array('label' => 'Grand_Slider_B_Panel_8'),
+
+'Grand_Slider_C_Qty' => array('label' => 'Grand_Slider_C_Qty'),
+'Grand_Slider_C_Width' => array('label' => 'Grand_Slider_C_Width'),
+'Grand_Slider_C_Height' => array('label' => 'Grand_Slider_C_Height'),
+'Grand_Slider_C_Panels' => array('label' => 'Grand_Slider_C_Panels'),
+'Grand_Slider_C_Panel_1' => array('label' => 'Grand_Slider_C_Panel_1'),
+'Grand_Slider_C_Panel_2' => array('label' => 'Grand_Slider_C_Panel_2'),
+'Grand_Slider_C_Panel_3' => array('label' => 'Grand_Slider_C_Panel_3'),
+'Grand_Slider_C_Panel_4' => array('label' => 'Grand_Slider_C_Panel_4'),
+'Grand_Slider_C_Panel_5' => array('label' => 'Grand_Slider_C_Panel_5'),
+'Grand_Slider_C_Panel_6' => array('label' => 'Grand_Slider_C_Panel_6'),
+'Grand_Slider_C_Panel_7' => array('label' => 'Grand_Slider_C_Panel_7'),
+'Grand_Slider_C_Panel_8' => array('label' => 'Grand_Slider_C_Panel_8'),
+
+'Grand_Slider_D_Qty' => array('label' => 'Grand_Slider_D_Qty'),
+'Grand_Slider_D_Width' => array('label' => 'Grand_Slider_D_Width'),
+'Grand_Slider_D_Height' => array('label' => 'Grand_Slider_D_Height'),
+'Grand_Slider_D_Panels' => array('label' => 'Grand_Slider_D_Panels'),
+'Grand_Slider_D_Panel_1' => array('label' => 'Grand_Slider_D_Panel_1'),
+'Grand_Slider_D_Panel_2' => array('label' => 'Grand_Slider_D_Panel_2'),
+'Grand_Slider_D_Panel_3' => array('label' => 'Grand_Slider_D_Panel_3'),
+'Grand_Slider_D_Panel_4' => array('label' => 'Grand_Slider_D_Panel_4'),
+'Grand_Slider_D_Panel_5' => array('label' => 'Grand_Slider_D_Panel_5'),
+'Grand_Slider_D_Panel_6' => array('label' => 'Grand_Slider_D_Panel_6'),
+'Grand_Slider_D_Panel_7' => array('label' => 'Grand_Slider_D_Panel_7'),
+'Grand_Slider_D_Panel_8' => array('label' => 'Grand_Slider_D_Panel_8'),
+
+'sliding_doors_Special' => array('label' => 'Special requirements:'),
+
+'sliding_turn_systems_interest' => array('label' => 'Slide and Turn Systems'),
+
+'sliding_turn_A_Qty' => array('label' => 'sliding_turn_A_Qty'),
+'sliding_turn_A_Width' => array('label' => 'sliding_turn_A_Width'),
+'sliding_turn_A_Height' => array('label' => 'sliding_turn_A_Height'),
+'sliding_turn_A_Left' => array('label' => 'sliding_turn_A_Left'),
+'sliding_turn_A_Right' => array('label' => 'sliding_turn_A_Right'),
+
+'sliding_turn_B_Qty' => array('label' => 'sliding_turn_B_Qty'),
+'sliding_turn_B_Width' => array('label' => 'sliding_turn_B_Width'),
+'sliding_turn_B_Height' => array('label' => 'sliding_turn_B_Height'),
+'sliding_turn_B_Left' => array('label' => 'sliding_turn_B_Left'),
+'sliding_turn_B_Right' => array('label' => 'sliding_turn_B_Right'),
+
+'sliding_turn_C_Qty' => array('label' => 'sliding_turn_C_Qty'),
+'sliding_turn_C_Width' => array('label' => 'sliding_turn_C_Width'),
+'sliding_turn_C_Height' => array('label' => 'sliding_turn_C_Height'),
+'sliding_turn_C_Left' => array('label' => 'sliding_turn_C_Left'),
+'sliding_turn_C_Right' => array('label' => 'sliding_turn_C_Right'),
+
+'sliding_turn_D_Qty' => array('label' => 'sliding_turn_D_Qty'),
+'sliding_turn_D_Width' => array('label' => 'sliding_turn_D_Width'),
+'sliding_turn_D_Height' => array('label' => 'sliding_turn_D_Height'),
+'sliding_turn_D_Left' => array('label' => 'sliding_turn_D_Left'),
+'sliding_turn_D_Right' => array('label' => 'sliding_turn_D_Right'),
+
+'sliding_turn_Special' => array('label' => 'Special requirements:'),
+
+'moveable_walls_interest' => array('label' => 'Moveable Walls'),
+
+'HSW_A_Qty' => array('label' => 'HSW_A_Qty'),
+'HSW_A_Width' => array('label' => 'HSW_A_Width'),
+'HSW_A_Height' => array('label' => 'HSW_A_Height'),
+'HSW_A_Left' => array('label' => 'HSW_A_Left'),
+'HSW_A_Right' => array('label' => 'HSW_A_Right'),
+
+'HSW_B_Qty' => array('label' => 'HSW_B_Qty'),
+'HSW_B_Width' => array('label' => 'HSW_B_Width'),
+'HSW_B_Height' => array('label' => 'HSW_B_Height'),
+'HSW_B_Left' => array('label' => 'HSW_B_Left'),
+'HSW_B_Right' => array('label' => 'HSW_B_Right'),
+
+'HSW_C_Qty' => array('label' => 'HSW_C_Qty'),
+'HSW_C_Width' => array('label' => 'HSW_C_Width'),
+'HSW_C_Height' => array('label' => 'HSW_C_Height'),
+'HSW_C_Left' => array('label' => 'HSW_C_Left'),
+'HSW_C_Right' => array('label' => 'HSW_C_Right'),
+
+'HSW_D_Qty' => array('label' => 'HSW_D_Qty'),
+'HSW_D_Width' => array('label' => 'HSW_D_Width'),
+'HSW_D_Height' => array('label' => 'HSW_D_Height'),
+'HSW_D_Left' => array('label' => 'HSW_D_Left'),
+'HSW_D_Right' => array('label' => 'HSW_D_Right'),
+
+'moveable_walls_Special' => array('label' => 'Special requirements:'),
 
 
 				'window_designs' => array('label' => 'Window designs:', 'maxbytes' => 8388608, 'fileset' => 'Window designs'), //<--REMEMBER TO ENABLE ADVANCED PERMISSIONS AND RESTRICT ACCESS TO THE FILE SET!
+				'roof_designs' => array('label' => 'Roof designs:', 'maxbytes' => 8388608, 'fileset' => 'Roof designs'), //<--REMEMBER TO ENABLE ADVANCED PERMISSIONS AND RESTRICT ACCESS TO THE FILE SET!
+
+'Glass_Balustrades_A_Qty' => array('label' => 'Glass_Balustrades_A_Qty'),
+'Glass_Balustrades_A_Width' => array('label' => 'Glass_Balustrades_A_Width'),
+'Glass_Balustrades_A_Internal_External' => array('label' => 'Glass_Balustrades_A_Internal_External'),
+'Glass_Balustrades_A_Handrail' => array('label' => 'Glass_Balustrades_A_Handrail'),
+
+'Glass_Balustrades_B_Qty' => array('label' => 'Glass_Balustrades_B_Qty'),
+'Glass_Balustrades_B_Width' => array('label' => 'Glass_Balustrades_B_Width'),
+'Glass_Balustrades_B_Internal_External' => array('label' => 'Glass_Balustrades_B_Internal_External'),
+'Glass_Balustrades_B_Handrail' => array('label' => 'Glass_Balustrades_B_Handrail'),
+
+'Glass_Balustrades_C_Qty' => array('label' => 'Glass_Balustrades_C_Qty'),
+'Glass_Balustrades_C_Width' => array('label' => 'Glass_Balustrades_C_Width'),
+'Glass_Balustrades_C_Internal_External' => array('label' => 'Glass_Balustrades_C_Internal_External'),
+'Glass_Balustrades_C_Handrail' => array('label' => 'Glass_Balustrades_C_Handrail'),
+
+'Glass_Balustrades_D_Qty' => array('label' => 'Glass_Balustrades_D_Qty'),
+'Glass_Balustrades_D_Width' => array('label' => 'Glass_Balustrades_D_Width'),
+'Glass_Balustrades_D_Internal_External' => array('label' => 'Glass_Balustrades_D_Internal_External'),
+'Glass_Balustrades_D_Handrail' => array('label' => 'Glass_Balustrades_D_Handrail'),
+
 			),
 		),	
 		//3rd form would go here, etc...

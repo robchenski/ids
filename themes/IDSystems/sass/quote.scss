@@ -152,6 +152,29 @@
 	}	
 }
 #stepped-form {
+.headings .vert span {
+  transform: rotate(-90deg);
+  writing-mode:tb-rl;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+	@include respond-to('small') {
+	  transform: none;
+	  writing-mode:tb-rl;
+	  white-space: normal;
+	}
+}
+ 
+.headings {
+  vertical-align: bottom;
+}
+ 
+.headings .vert {
+ // white-space: nowrap;
+/*  > div {
+  	width: 100% !important;
+  }*/
+}
 	.row {
 		.ids-form-input-error {
 			border: 1px solid #f5aca6;
@@ -167,7 +190,7 @@
 			ul {
 				list-style: none;
 				padding: 0;
-				margin: 0;
+				margin: 32px 0 0 0;
 				text-align: right;
 				li {
 					display: inline-block;
@@ -497,8 +520,14 @@
 					}
 				}
 			}*/
+			#folding_doors_quote_details,
 			#sliding_doors_quote_details,
-			#slide_turn_systems_quote_details {
+			#slide_turn_systems_quote_details,
+			#moveable_walls_quote_details,
+			#windows_quote_details,
+			#roofs_quote_details,
+			#glass_balustrades_quote_details {
+				display: none;
 			}
 
 		}
