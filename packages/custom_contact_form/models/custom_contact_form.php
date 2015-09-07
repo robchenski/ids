@@ -152,8 +152,8 @@ class CustomContactForm {
 
 
 'aluminium_interest' => array('label' => 'Aluminium Bi-fold doors'),
-'timber_interest Timber' => array('label' => 'Bi-fold doors'),
-'composite_interest Composite' => array('label' => 'Bi-fold doors'),
+'timber_interest' => array('label' => 'Timber Bi-fold doors'),
+'composite_interest' => array('label' => 'Composite Bi-fold doors'),
 
 'folding_doors_A_Qty' => array('label' => 'folding_doors_A_Qty'),
 'folding_doors_A_Width' => array('label' => 'folding_doors_A_Width'),
@@ -239,7 +239,7 @@ class CustomContactForm {
 'Grand_Slider_D_Panel_7' => array('label' => 'Grand_Slider_D_Panel_7'),
 'Grand_Slider_D_Panel_8' => array('label' => 'Grand_Slider_D_Panel_8'),
 
-'sliding_doors_Special' => array('label' => 'Special requirements:'),
+'sliding_doors_Special' => array('label' => 'Special Sliding doors requirements:'),
 
 'sliding_turn_systems_interest' => array('label' => 'Slide and Turn Systems'),
 
@@ -267,7 +267,7 @@ class CustomContactForm {
 'sliding_turn_D_Left' => array('label' => 'sliding_turn_D_Left'),
 'sliding_turn_D_Right' => array('label' => 'sliding_turn_D_Right'),
 
-'sliding_turn_Special' => array('label' => 'Special requirements:'),
+'sliding_turn_Special' => array('label' => 'Special Slide and Turn requirements:'),
 
 'moveable_walls_interest' => array('label' => 'Moveable Walls'),
 
@@ -295,7 +295,7 @@ class CustomContactForm {
 'HSW_D_Left' => array('label' => 'HSW_D_Left'),
 'HSW_D_Right' => array('label' => 'HSW_D_Right'),
 
-'moveable_walls_Special' => array('label' => 'Special requirements:'),
+'moveable_walls_Special' => array('label' => 'Special Moveable walls requirements:'),
 
 
 				'window_designs' => array('label' => 'Window designs:', 'maxbytes' => 8388608, 'fileset' => 'Window designs'), //<--REMEMBER TO ENABLE ADVANCED PERMISSIONS AND RESTRICT ACCESS TO THE FILE SET!
