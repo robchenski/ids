@@ -87,18 +87,24 @@ class CustomContactForm {
 		),
 		
 		//Here is an example of a 2nd form. You can delete it if you only need 1 form...
-		'a_different_form' => array(
-			'title' => 'A Different Form',
+		'site_survey_form' => array(
+			'title' => 'Site Survey Form',
 			'fields' => array(
-				'first_name' => array('label' => 'First Name', 'required' => true),
-				'last_name' => array('label' => 'Last Name', 'required' => true),
+				'agree' => array('label' => 'I Agree to All Statements Above', 'required' => true),
+				'openings_date' => array('label' => 'Date the Opening(s) Will Be Formed', 'required' => true),
+				'quote_ref' => array('label' => 'Quotation Reference', 'required' => true),
+				'client_name' => array('label' => 'Client Name', 'required' => true),
+				'company_name' => array('label' => 'Company'),
+				'telephone_number' => array('label' => 'Telephone Number', 'required' => true),
 				'email' => array('label' => 'Email', 'required' => true, 'email' => true, 'reply_to' => true),
-				'phone' => array('label' => 'Phone #'),
-				'address' => array('label' => 'Street Address'),
-				'city' => array('label' => 'City'),
-				'state' => array('label' => 'State'),
-				'zip' => array('label' => 'ZIP Code'),
-				'proposal' => array('label' => 'Proposal', 'required' => true, 'maxbytes' => 2000000, 'fileset' => 'Uploaded Proposals'), //<--REMEMBER TO ENABLE ADVANCED PERMISSIONS AND RESTRICT ACCESS TO THE FILE SET!
+				'site_postcode' => array('label' => 'Site Postcode', 'required' => true),
+				'address_line_1' => array('label' => '1st Line Site Address', 'required' => true),
+				'site_contact_name' => array('label' => 'Site Contact Name', 'required' => true),
+				'site_contact_number' => array('label' => 'Site Contact Number', 'required' => true),
+				'site_contact_email' => array('label' => 'Site Contact Email', 'required' => true, 'email' => true),
+				'whom_to_contact' => array('label' => 'Who Should we Contact to Arrange the Survey?', 'required' => true),
+				'nearest_car_park' => array('label' => 'Nearest Car Parking', 'required' => true),
+				'details_samples' => array('label' => 'Detail and Samples Required'),
 			),
 		),
 
@@ -116,6 +122,7 @@ class CustomContactForm {
 				'opening_height' => array('label' => 'Opening Height'),
 				'interest' => array('label' => 'I am interested in'),
 				'other' => array('label' => 'Other interests', 'maxlength' => 5000),
+				'material' => array('label' => 'Material choice'),
 				//'interest' => array('label' => 'Proposal', 'required' => true, 'maxbytes' => 2000000, 'fileset' => 'Uploaded Proposals'), //<--REMEMBER TO ENABLE ADVANCED PERMISSIONS AND RESTRICT ACCESS TO THE FILE SET!
 			),
 		),
@@ -183,7 +190,7 @@ class CustomContactForm {
 'folding_doors_D_Right' => array('label' => 'folding_doors_D_Right'),
 'folding_doors_D_Open' => array('label' => 'folding_doors_D_Open'),
 
-'folding_doors_Special' => array('label' => 'Special Bi-fold requirements:'),
+'folding_doors_Special' => array('label' => 'Special Bi-fold requirements:', 'maxlength' => 5000),
 
 'sliding_doors_interest' => array('label' => 'Sliding doors'),
 
@@ -239,7 +246,7 @@ class CustomContactForm {
 'Grand_Slider_D_Panel_7' => array('label' => 'Grand_Slider_D_Panel_7'),
 'Grand_Slider_D_Panel_8' => array('label' => 'Grand_Slider_D_Panel_8'),
 
-'sliding_doors_Special' => array('label' => 'Special Sliding doors requirements:'),
+'sliding_doors_Special' => array('label' => 'Special Sliding doors requirements:', 'maxlength' => 5000),
 
 'sliding_turn_systems_interest' => array('label' => 'Slide and Turn Systems'),
 
@@ -267,7 +274,7 @@ class CustomContactForm {
 'sliding_turn_D_Left' => array('label' => 'sliding_turn_D_Left'),
 'sliding_turn_D_Right' => array('label' => 'sliding_turn_D_Right'),
 
-'sliding_turn_Special' => array('label' => 'Special Slide and Turn requirements:'),
+'sliding_turn_Special' => array('label' => 'Special Slide and Turn requirements:', 'maxlength' => 5000),
 
 'moveable_walls_interest' => array('label' => 'Moveable Walls'),
 
@@ -295,7 +302,7 @@ class CustomContactForm {
 'HSW_D_Left' => array('label' => 'HSW_D_Left'),
 'HSW_D_Right' => array('label' => 'HSW_D_Right'),
 
-'moveable_walls_Special' => array('label' => 'Special Moveable walls requirements:'),
+'moveable_walls_Special' => array('label' => 'Special Moveable walls requirements:', 'maxlength' => 5000),
 
 
 				'window_designs' => array('label' => 'Window designs:', 'maxbytes' => 8388608, 'fileset' => 'Window designs'), //<--REMEMBER TO ENABLE ADVANCED PERMISSIONS AND RESTRICT ACCESS TO THE FILE SET!

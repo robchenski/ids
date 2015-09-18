@@ -85,6 +85,12 @@ $form = Loader::helper('form');
 										<label for="other">Other interests</label>
 										<?php echo $form->textarea('other', null, array('placeholder' => 'Other interest', 'style' => '', 'class' => 'other-text')); ?><!--input type="text" id="other" class="other" name="other" placeholder="other" required maxlength="50" /-->
 									</p>
+									<p>
+										<label for="material">Material choice:</label>
+										<span>Aluminium <?php echo $form->checkbox('material[]', 'Aluminium'); ?><!--input type="checkbox" name="interest" value="Folding doors" /--></span>
+										<span>Timber <?php echo $form->checkbox('material[]', 'Timber'); ?><!--input type="checkbox" name="interest" value="Sliding doors" /--></span>
+										<span>Composite <?php echo $form->checkbox('material[]', 'Composite'); ?><!--input type="checkbox" name="interest" value="Other" /--></span>
+									</p>
 								</div>
 								<div class="right">				  
 									<p class="btn-submit">

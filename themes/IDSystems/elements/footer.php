@@ -16,15 +16,15 @@
 					</div>
 					<div class="right">
 						<div class="item">
-							<div class="sponsors">
+							<div class="sponsors"><?php /*
 								<p>Sponsors for:</p>
-								<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/lotus.png"></a>
+								<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/lotus.png"></a>*/ ?>
 							</div>
 							<div class="social">
 								<p>You can find us on:</p>
 								<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/fb.png"></a>
 								<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/tw.png"></a>
-								<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/pi.png"></a>
+								<?php /*<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/pi.png"></a>*/ ?>
 								<a href="#"><img src="<?php echo $this->getThemePath(); ?>/images/yt.png"></a>
 							</div>
 						</div>

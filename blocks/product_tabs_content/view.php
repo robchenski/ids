@@ -73,8 +73,25 @@
 				}*/
 				// other options
 			});
-		}	
-
+		}
+		if ($('.addedGalleryTab').length > 0) {
+			// get all the gallery elements in the myitems array so you can add them to the init
+			var myitems = [];
+			$('.items a').each(function(){
+				myitems.push({
+					src:$(this).attr('href'),
+			        type:'image'
+				});
+			});
+			$('.addedGalleryTab a').magnificPopup({
+				items: myitems,
+				gallery:
+				{
+					enabled: true
+				}
+				// other options
+			});
+		}
 	});
 </script>
 <script>
@@ -102,13 +119,17 @@
 					//var heading = $( "em" ).attr( "title" )
 					//$( "h2:contains('Gallery')" ).attr("id", "#tabs-1-gallery");
 				}
+
+
 			    $('#main-container').easytabs({
 			    	tabs: ""
 			//    panelContext: $('div.resp-tabs-container')
 			    });
+
 			    console.log( "yo!" );
 		    }
 		});
+
 
 	});
 </script>

@@ -93,6 +93,15 @@ $(function() {
 		}
 	}).change();
 
+    $('input#company_Yes').change(function(){
+        if ($(this).is(':checked')) {
+            $('p.company_other').slideDown();
+        } 
+        else {
+            $('p.company_other').slideUp();
+        }
+    }).change();
+
     $('select#heard_about_us').change(function(){
         /* setting currently changed option value to option variable */
         var option = $(this).find('option:selected').val();
@@ -208,18 +217,23 @@ $(function() {
   */
 
         var cssClass = ((options) ? options.className : false) || "vertical";
+if (cssClass === 'undo') {
+    $('.vert').toggleClass("notrotated");
 
+    $('.vert > div').css({"width" : "0", "height": "0"});
+} else {
+//$('.vert').toggleClass("notrotated");
         var cellsToRotate = $('.' + cssClass, this);
 
         var betterCells = [];
         cellsToRotate.each(function () {
             var cell = $(this)
           , newText = cell.text()
-          , height = '100%'
+          , height = cell.height()
           , width = cell.width()
           , newDiv = $('<div>', { height: width, width: height })
           , newInnerDiv = $('<div>', { text: newText, 'class': 'rotated' });
-console.log(height);
+console.log(width);
             newDiv.append(newInnerDiv);
 
             betterCells.push(newDiv);
@@ -228,11 +242,26 @@ console.log(height);
         cellsToRotate.each(function (i) {
             $(this).html(betterCells[i]);
         });
+};
+
+//                , height = '100%'
+
+
     };
 })(jQuery);
 $(function() {
-  //  $('.headings').rotateTableCellContent({className: 'vert'});
+//    $('.headings').rotateTableCellContent({className: 'vert'});
+  //  $('.tableSelector').rotateTableCellContent();
 });
+    $(function() {
+        enquire.register("screen and (max-width: 767px)", function() {
+            if ($( "#stage_3" ).length) {
+            //    $('.headings').rotateTableCellContent({className: 'vert'});
+            }
+            //console.log( "form" );
+        });
+
+    });
 /**********************
 Back to top floating link
 **********************/

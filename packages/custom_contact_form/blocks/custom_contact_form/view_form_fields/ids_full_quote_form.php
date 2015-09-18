@@ -31,7 +31,7 @@ $form = Loader::helper('form');
 
 			</ul>
 		</div>
-<?php /*		*/ ?>
+<?php /*	*/ ?>
 		<span>Step 1</span>
 		<section>
 			<h2>Please complete the forms to receive a quotation</h2>
@@ -67,7 +67,7 @@ $form = Loader::helper('form');
 					</p>
 					<p>
 						<?php echo $form->label('telephone', 'Phone Number *'); ?>
-						<?php echo $form->telephone('telephone', null, array('placeholder' => 'Phone Number *')); ?>
+						<?php echo $form->text('telephone', null, array('placeholder' => 'Phone Number *')); ?>
 					</p>
 					<p>
 						<?php echo $form->label('customer_type', 'Customer Type *'); ?>
@@ -107,7 +107,7 @@ $form = Loader::helper('form');
 						<?php echo $form->label('company', 'Are you a company?'); ?>
 						<?php echo $form->checkbox('company[]', 'Yes'); ?>
 					</p>
-						<p class="other" style="display: none;">
+						<p class="company_other" style="display: none;">
 							<?php echo $form->label('company_name', 'Company name'); ?>
 							<?php echo $form->textarea('company_name', null, array('placeholder' => 'Company name', 'style' => '', 'class' => 'other-text')); ?>
 						</p>
@@ -138,7 +138,7 @@ $form = Loader::helper('form');
 						<span>Windows <?php echo $form->checkbox('interest[]', 'windows'); ?></span>
 						<span>Roofs <?php echo $form->checkbox('interest[]', 'roofs'); ?></span>
 						<span>Balustrades <?php echo $form->checkbox('interest[]', 'balustrades'); ?></span>
-						<span>Blinds <?php echo $form->checkbox('interest[]', 'blinds'); ?></span>
+						<?php /*<span>Blinds <?php echo $form->checkbox('interest[]', 'blinds'); ?></span>*/ ?>
 					</p>
 					<p>
 						<?php echo $form->label('heard_about_us', 'Where did you hear about us? *'); ?>
@@ -274,7 +274,7 @@ $form = Loader::helper('form');
 				</div>
 			</div>
 		</section>
-
+	
 		<span>Step 3</span>
 		<section>
 			<div class="row interest" id="stage_3">
@@ -330,14 +330,14 @@ $form = Loader::helper('form');
 						<h3><?php echo $aluminium_productpage_name; ?></h3>
 						<div class="form-inner">
 							<div class="frow headings">
-						 class="vert"><span>Number of Sets</span></div>
-							    <div class="vert"><span>Position</span></div>
-							    <div class="vert"><span>Opening Width</span></div>
-							    <div class="vert"><span>Opening Height</span></div>
-							    <div class="vert"><span>No. Panels Left (viewed inside)</span></div>
-							    <div class="vert"><span>No. Panels Right (viewed inside)</span></div>
-							    <div class="vert"><span>Open In</span></div>
-							    <div class="vert"><span>Open Out</span></div>
+						 		<div class="vert">Number of Sets</div>
+							    <div class="vert">Position</div>
+							    <div class="vert">Opening Width</div>
+							    <div class="vert">Opening Height</div>
+							    <div class="vert">No. Panels Left</div>
+							    <div class="vert">No. Panels Right</div>
+							    <div class="vert">Open In</div>
+							    <div class="vert">Open Out</div>
 							</div>
 							<div class="frow">
 							    <div><?php echo $form->text('folding_doors_A_Qty'); ?></div>
@@ -349,7 +349,7 @@ $form = Loader::helper('form');
 							    <div><?php echo $form->radio('folding_doors_A_Open', 'In'); ?></div>
 							    <div><?php echo $form->radio('folding_doors_A_Open', 'Out'); ?></div>
 							</div>
-							<div class="frow">
+							<div class="frow" style="display: none;">
 							    <div><?php echo $form->text('folding_doors_B_Qty'); ?></div>
 							    <div>B</div>
 							    <div><?php echo $form->text('folding_doors_B_Width'); ?></div>
@@ -359,7 +359,7 @@ $form = Loader::helper('form');
 							    <div><?php echo $form->radio('folding_doors_B_Open', 'In'); ?></div>
 							    <div><?php echo $form->radio('folding_doors_B_Open', 'Out'); ?></div>
 							</div>
-							<div class="frow">
+							<div class="frow" style="display: none;">
 							    <div><?php echo $form->text('folding_doors_C_Qty'); ?></div>
 							    <div>C</div>
 							    <div><?php echo $form->text('folding_doors_C_Width'); ?></div>
@@ -369,7 +369,7 @@ $form = Loader::helper('form');
 							    <div><?php echo $form->radio('folding_doors_C_Open', 'In'); ?></div>
 							    <div><?php echo $form->radio('folding_doors_C_Open', 'Out'); ?></div>
 							</div>
-							<div class="frow">
+							<div class="frow" style="display: none;">
 							    <div><?php echo $form->text('folding_doors_D_Qty'); ?></div>
 							    <div>D</div>
 							    <div><?php echo $form->text('folding_doors_D_Width'); ?></div>
@@ -414,12 +414,12 @@ $form = Loader::helper('form');
 						<p>Please complete the quantity required, overall dimensions and total number of panels required.</p>
 						<div class="form-inner">
 							<div class="frow headings">
-							    <div class="vert"><span>Number of Sets</span></div>
-							    <div class="vert"><span>Position</span></div>
-							    <div class="vert"><span>Opening Width</span></div>
-							    <div class="vert"><span>Opening Height</span></div>
-							    <div class="vert"><span>Total no. panels</span></div>
-							    <div class="vert"><span>Panels</span></div>
+							    <div class="vert">Number of Sets</div>
+							    <div class="vert">Position</div>
+							    <div class="vert">Opening Width</div>
+							    <div class="vert">Opening Height</div>
+							    <div class="vert">Total no. panels</div>
+							    <div class="vert">Panels</div>
 							</div>
 							<div class="frow" data-set="A">
 							    <div><?php echo $form->text('Grand_Slider_A_Qty', ''); ?></div>
@@ -587,12 +587,12 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 						<h3><?php echo $sliding_turn_systems_productpage_name; ?></h3>
 						<div class="form-inner">
 							<div class="frow headings">
-							    <div class="vert"><span>Qty (number of door-sets)</span></div>
-							    <div class="vert"><span>Position</span></div>
-							    <div class="vert"><span>Overall Width</span></div>
-							    <div class="vert"><span>Overall Height</span></div>
-							    <div class="vert"><span>No. Panels Left (viewed from inside)</span></div>
-							    <div class="vert"><span>No. Panels Right (viewed from inside)</span></div>
+							    <div class="vert">Qty (number of door-sets)</div>
+							    <div class="vert">Position</div>
+							    <div class="vert">Overall Width</div>
+							    <div class="vert">Overall Height</div>
+							    <div class="vert">No. Panels Left (viewed from inside)</div>
+							    <div class="vert">No. Panels Right (viewed from inside)</div>
 							</div>
 							<div class="frow">
 							    <div><?php echo $form->text('sliding_turn_A_Qty'); ?></div>
@@ -661,12 +661,12 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 						<h3><?php echo $moveable_walls_productpage_name; ?></h3>
 						<div class="form-inner">
 							<div class="frow headings">
-							    <div class="vert"><span>Qty (number of door-sets)</span></div>
-							    <div class="vert"><span>Position</span></div>
-							    <div class="vert"><span>Overall Width</span></div>
-							    <div class="vert"><span>Overall Height</span></div>
-							    <div class="vert"><span>No. Panels Left (viewed from inside)</span></div>
-							    <div class="vert"><span>No. Panels Right (viewed from inside)</span></div>
+							    <div class="vert">Qty (number of door-sets)</div>
+							    <div class="vert">Position</div>
+							    <div class="vert">Overall Width</div>
+							    <div class="vert">Overall Height</div>
+							    <div class="vert">No. Panels Left (viewed from inside)</div>
+							    <div class="vert">No. Panels Right (viewed from inside)</div>
 							</div>
 							<div class="frow">
 							    <div><?php echo $form->text('HSW_A_Qty'); ?></div>
@@ -767,11 +767,11 @@ echo $form->select('Grand_Slider_D_Panel_8', array('Pick' => '', 'Fixed' => 'F',
 					<div class="form-holder">
 						<div class="form-inner">
 							<div class="frow headings">
-	                            <div class="vert"><span>Qty</span></div>
-	                            <div class="vert"><span>Position</span></div>
-	                            <div class="vert"><span>Overall Width</span></div>
-	                            <div class="vert"><span>Internal or External</span></div>
-	                            <div class="vert"><span>Handrail Required</span></div>
+	                            <div class="vert">Qty</div>
+	                            <div class="vert">Position</div>
+	                            <div class="vert">Overall Width</div>
+	                            <div class="vert">Internal or External</div>
+	                            <div class="vert">Handrail Required</div>
 	                        </div>
 	                        <div class="frow">
 	                            <div><?php echo $form->text('Glass_Balustrades_A_Qty'); ?></div>

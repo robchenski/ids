@@ -208,9 +208,6 @@ $(document).ready(function() {
 				address_1:{
 					required: true,
 				},
-				address_2:{
-					required: true,
-				},
 				town_city:{
 					required: true,
 				},
@@ -254,9 +251,6 @@ $(document).ready(function() {
 				},
 				address_1:{
 					required: "Please enter the first line of your address.",
-				},
-				address_2:{
-					required: "Please enter the second line of your address.",
 				},
 				town_city:{
 					required: "Please enter your Town / City.",

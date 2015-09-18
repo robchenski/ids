@@ -37,75 +37,50 @@
  * (otherwise there will be problems if the user adds more than one of this block to the same page).
  */
 ?>
-<div id="gallery<?php echo $bID ?>" class="gallery row product-page-gallery">
-	<div id="slider" class="flexslider">
-		<ul class="slides">
-		<?php foreach ($images as $img): ?>
-			<li>
-				<!--a href="<?php echo $img->large->src ?>"-->
-				<img src="<?php echo $img->large->src ?>" width="<?php echo $img->large->width ?>" height="<?php echo $img->large->height ?>" alt="<?php echo $img->title ?>" />
-				<!--/a-->
-			</li>
-		<?php endforeach; ?>
-		</ul>
-	</div>
-	<div id="carousel" class="flexslider">
-		<ul class="slides">
-		<?php foreach ($images as $img): ?>
-			<li>
-				<img src="<?php echo $img->thumb->src ?>" width="<?php echo $img->thumb->width ?>" height="<?php echo $img->thumb->height ?>" alt="" />
-			</li>
-		<?php endforeach; ?>
-		</ul>
-	</div>
+<div id="gallery-button">
+
+	<?php  if (!empty($field_1_image)): ?>
+		<h2><?php  echo $field_1_image_altText; ?></h2>
+		<p><a href="#" id="gallery-btn-<?php echo $bID ?>"><img src="<?php  echo $field_1_image->src; ?>" width="<?php  echo $field_1_image->width; ?>" height="<?php  echo $field_1_image->height; ?>" alt="" /></a></p>
+	<?php  endif; ?>
+
+	<ul id="gallery<?php echo $bID ?>" style="display: none;">
+	<?php foreach ($images as $img): ?>
+		<li class="gallery-items">
+			<img src="<?php echo $img->large->src ?>" width="<?php echo $img->large->width ?>" height="<?php echo $img->large->height ?>" alt="" />
+		</li>
+	<?php endforeach; ?>
+	</ul>
 </div>
 
+
+<script>
+// if we are using the custom product technical tab item block
+// remove from it's temp location and insert in the tab content block in the right place
+	$(function() {
+		if ($('#gallery<?php echo $bID ?>').length > 0) {
+			// get all the gallery elements in the myitems array so you can add them to the init
+			var myitems = [];
+			$('#gallery<?php echo $bID ?> .gallery-items img').each(function(){
+				myitems.push({
+					src:$(this).attr('src'),
+			        type:'image'
+				});
+			});
+			$('#gallery-btn-<?php echo $bID ?>').magnificPopup({
+				items: myitems,
+				gallery:
+				{
+					enabled: true
+				}
+				// other options
+			});
+		}
+	});
+</script>
 <script type="text/javascript">
 $(document).ready(function() {
 	//JQUERY PLUGIN EXAMPLE:
 	//$('#gallery<?php echo $bID ?>').someKindOfGallery();
-});
-$(function() {
-	  // The slider being synced must be initialized first
-
-  $('#gallery<?php echo $bID ?> #carousel').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-		prevText: "",           //String: Set the text for the "previous" directionNav item
-		nextText: "",               //String: Set the text for the "next" directionNav item
-		
-    itemWidth: 80,
-    //itemMargin: 0,
-    //minItems: 2,
-    //maxItems: 10,
-    asNavFor: '#gallery<?php echo $bID ?> #slider'
-  });
-
-	$('#gallery<?php echo $bID ?> #slider').flexslider({
-		animation: "slide",
-		prevText: "",           //String: Set the text for the "previous" directionNav item
-		nextText: "",               //String: Set the text for the "next" directionNav item
-		controlNav: true,
-		smoothHeight: true,
-	    animationLoop: true,
-	    sync: "#gallery<?php echo $bID ?> #carousel",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-	});
-
-	// popup / modal / lightbox effect
-/*	$('.slides').magnificPopup({
-		delegate: 'a', // child items selector, by clicking on it popup will open
-		type: 'image',
-		gallery:
-		{
-			enabled: true
-		}
-		// other options
-	});
-*/
 });
 </script>

@@ -190,6 +190,7 @@
 									img {
 										display: table-cell;
 										max-width: 100%;
+										width: 100%;
 										height: auto;
 										font-size: 0;
 									}
@@ -209,6 +210,12 @@
 						}
 						vertical-align: top;
 						display: inline-block;
+						#twitter-holder {
+							text-align: center;
+						}/*
+
+// OLD twitter block
+
 						.twitter-feed,
 						.ccm-tweetcrete {
 							padding: 25px;
@@ -240,6 +247,7 @@
 								}
 							}
 						}
+						*/
 					}
 				}
 				
@@ -272,6 +280,11 @@
 							&:nth-child(9) {
 								border: 0;
 							}		
+						}
+						img {
+							max-width: 100%;
+							width: 100%;
+							height: auto;
 						}
 					}
 				}

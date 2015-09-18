@@ -355,6 +355,21 @@
 		clear: left; 	
 	}
 }
+#tabs-1-special-features {
+	ul {
+		margin-left: 0;
+		padding-left: 0;
+		list-style: none;
+		li {
+			padding: 3px 0 0 50px;
+			background-image: url(../images/tick-list-image.png);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			min-height: 35px;
+			margin-bottom: 7px;
+		}
+	}
+}
 .resp-tabs-container {
 	display: inline-block;
 	width: 100%;

@@ -39,8 +39,8 @@
 
 					<div class="header-cta">
 						<div class="btn-holder">
-							<div class="quote-btn" id="quote-btn"><a href="/quotation" class="btn"><span></span> Get a quote</a></div>
-							<div class="download-btn" id="download-btn"><a href="#" class="btn"><span></span> Download brochures</a></div>
+							<div class="quote-btn" id="quote-btn"><a href="<?php echo View::url('/'); ?>quotation/" class="btn"><span></span> Get a quote</a></div>
+							<div class="download-btn" id="download-btn"><a href="<?php echo View::url('/'); ?>downloads/" class="btn"><span></span> Download brochures</a></div>
 						</div>
 						<div class="contact-number" id="contact-number"><a href="#">Call 01603 408 804</a></div>
 					</div>
@@ -140,6 +140,12 @@
 			$a->setBlockLimit(1);
 			$a->display($c);
 		}
+		elseif(is_object($p) && $p instanceof Page && !$p->isError() && $p->getCollectionID() == '278'){
+			//this clear enough?
+			//$a = new Area('Home Page Banner');
+			//$a->setBlockLimit(1);
+			//$a->display($c);
+		}
 		else
 		{
 		?>
@@ -153,7 +159,10 @@
 		  {
 		  	echo $this->getThemePath() . '/images/bg-1.jpg';
 		  }
-		?>');"></div>
+		?>');">
+
+		<a id="download-tab" href="<?php echo View::url('/'); ?>downloads/"><img src="<?php echo $this->getThemePath(); ?>/images/download-tab.png" width="47" height="266"></a>
+		</div>
 		<?php
 		}
 

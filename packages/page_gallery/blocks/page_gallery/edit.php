@@ -1,5 +1,6 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
-
+<?php  defined('C5_EXECUTE') or die("Access Denied.");
+$al = Loader::helper('concrete/asset_library');
+?>
 <style type="text/css">
 	div.ccm-pane-controls label {
 		font-weight: normal !important;
@@ -21,8 +22,20 @@
 		text-align: center;
 		width: 30px;
 	}
+	.ccm-block-field-group h2 { margin-bottom: 5px; }
+	.ccm-block-field-group td { vertical-align: middle; }
 </style>
+<div class="ccm-block-field-group">
+	<h2>Button image</h2>
+	<?php  echo $al->image('field_1_image_fID', 'field_1_image_fID', 'Choose Image', $field_1_image); ?>
 
+	<table border="0" cellspacing="3" cellpadding="0" style="width: 95%; margin-top: 5px;">
+		<tr>
+			<td align="right" nowrap="nowrap"><label for="field_1_image_altText">Alt Text:</label>&nbsp;</td>
+			<td align="left" style="width: 100%;"><?php  echo $form->text('field_1_image_altText', $field_1_image_altText, array('style' => 'width: 100%;')); ?></td>
+		</tr>
+	</table>
+</div>
 <table border="0" cellpadding="0" cellspacing="0" class="gallery-display-table">
 	<tr><td class="label">
 		<?php echo $form->label('fsID', t('File Set:')); ?>

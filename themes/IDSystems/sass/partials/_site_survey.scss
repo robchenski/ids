@@ -1,0 +1,121 @@
+.site-survey-form {
+    padding-bottom: 20px;
+    display: inline-block;
+    h2 {
+        text-align: center;
+        margin-top: 29px;
+    }
+    legend {
+        @extend %visuallyhidden;
+    }
+    .row {
+        display: table;
+        width: 100%;
+        text-align: left;
+        &.details {
+            .left {
+                display: block;
+                width: 100%;
+                @include respond-to('medium') {
+                //    display: table-cell;
+                //    width: percentage(480px / 960px);
+                }
+            }
+            .right {
+                display: block;
+                width: 100%;
+                @include respond-to('medium') {
+                //    display: table-cell;
+                //    width: percentage(480px / 960px);
+                }
+            }
+        }
+        .btn-submit {
+            text-align: right;
+            button {
+                @include btn();
+                //width: 225px;
+                //height: 38px;
+                //max-width: 100%;
+                //padding: 0;
+                //background: url('../images/button.png') 0 0 no-repeat;
+                //border: none;
+            }/**/
+        }
+        .sub {
+            margin-bottom: 19px;
+            display: inline-block;
+            width: 100%;
+            vertical-align: middle;
+            > * {
+                vertical-align: middle;
+                display: inline-block;
+            }
+            label {
+                width: 100%;
+                display: block;
+                @include respond-to('small') {
+                    width: percentage(135px / 480px);
+                    text-align: right;
+                    display: inline-block;
+                }
+                //width: percentage(135px / 480px);
+                //text-align: right;
+                padding-right:  percentage(18px / 480px);
+            }
+            .sub-group {
+                width: 100%;
+                display: block;
+                @include respond-to('small') {
+                    width: percentage(302px / 480px);
+                    display: inline-block;
+                }
+                .notes {
+                    display: block;
+                    @include font-size(11);
+                }
+            }
+            textarea {
+                width: 100%;
+            }
+            input {
+                width: 100%;
+                //display: block;
+                //background-color: $white;
+                //border: 0;
+                line-height: 29px;
+                &.other {
+                    display: none;
+                }
+                &[type="placeholder"] {
+                    display: none;
+                }
+                &[type="checkbox"] {
+                    text-align: left;
+                }
+                &[type="submit"] {
+                    width: 225px;
+                    height: 38px;
+                    max-width: 100%;
+                    padding: 0;
+                    background: url('../images/button.png') 0 0 no-repeat;
+                }
+            }
+            &.dimes {
+                input {
+                    width: percentage(230px / 480px);
+                    margin-right: 1%;
+                }
+            }
+            span {
+                //width:  percentage(302px / 480px);
+            }
+        }
+    }
+    
+    #some-el {
+        @include respond-to('medium') {
+            display: none;
+        }
+    }
+}

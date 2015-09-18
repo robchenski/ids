@@ -17,7 +17,7 @@ class PageGalleryPackage extends Package {
 	}
 	
 	public function getPackageDescription() {
-		return t('Page Gallery block, image slider etc. Choose your images from a file set...');
+		return t('Page Gallery button');
 	}
 	
 /* DONE! You generally don't need to change anything below this line.

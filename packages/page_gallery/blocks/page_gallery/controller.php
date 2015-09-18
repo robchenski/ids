@@ -16,7 +16,7 @@ class PageGalleryBlockController extends BlockController {
 	}
 	
 	public function getBlockTypeDescription() {
-		return t('Page Gallery block, image slider etc. Choose your images from a file set...'); //Only appears in dashboard "Add Functionality" page
+		return t('Page Gallery'); //Only appears in dashboard "Add Functionality" page
 	}
 	
 	//Default values for new blocks...
@@ -32,7 +32,7 @@ class PageGalleryBlockController extends BlockController {
 	
 	//Add/Edit interface configuration...
 	private $showLargeControls = true;
-	private $showThumbControls = true;
+	private $showThumbControls = false;
 	
 	//Caching is disabled while in development,
 	// but you should change these to TRUE for production.
@@ -72,6 +72,7 @@ class PageGalleryBlockController extends BlockController {
 	}
 	
 	public function edit() {
+		$this->set('field_1_image', (empty($this->field_1_image_fID) ? null : File::getByID($this->field_1_image_fID)));
 		$this->setFileSets();
 		$this->setInterfaceSettings();
 		$this->setNormalizedValues();
@@ -107,6 +108,7 @@ class PageGalleryBlockController extends BlockController {
 	}
 	
 	public function save($data) {
+		$data['field_1_image_fID'] = empty($data['field_1_image_fID']) ? 0 : $data['field_1_image_fID'];
 		$data['largeWidth'] = intval($data['largeWidth']);
 		$data['largeHeight'] = intval($data['largeHeight']);
 		$data['thumbWidth'] = intval($data['thumbWidth']);
@@ -118,6 +120,7 @@ class PageGalleryBlockController extends BlockController {
 	}
 	
 	public function view() {
+		$this->set('field_1_image', (empty($this->field_1_image_fID) ? null : $this->get_image_object($this->field_1_image_fID, 0, 0, false)));
 		$files = $this->getFilesetImages($this->fsID, $this->randomize);
 		$images = $this->processImageFiles($files, $this->largeWidth, $this->largeHeight, $this->cropLarge, $this->thumbWidth, $this->thumbHeight, $this->cropThumb);
 		$this->set('images', $images);
@@ -140,7 +143,30 @@ class PageGalleryBlockController extends BlockController {
 		$files = $fl->get();
 		return $files;	
 	}
+
+	//Helper function for image fields
+	private function get_image_object($fID, $width = 0, $height = 0, $crop = false) {
+		if (empty($fID)) {
+			$image = null;
+		} else if (empty($width) && empty($height)) {
+			//Show image at full size (do not generate a thumbnail)
+			$file = File::getByID($fID);
+			$image = new stdClass;
+			$image->src = $file->getRelativePath();
+			$image->width = $file->getAttribute('width');
+			$image->height = $file->getAttribute('height');
+		} else {
+			//Generate a thumbnail
+			$width = empty($width) ? 9999 : $width;
+			$height = empty($height) ? 9999 : $height;
+			$file = File::getByID($fID);
+			$ih = Loader::helper('image');
+			$image = $ih->getThumbnail($file, $width, $height, $crop);
+		}
 	
+		return $image;
+	}
+		
 	private function processImageFiles($imageFiles, $largeWidth, $largeHeight, $cropLarge, $thumbWidth, $thumbHeight, $cropThumb) {
 		$ih = version_compare(APP_VERSION, '5.4.2', '>=') ? Loader::helper('image') : Loader::helper('cropping_image', $this->getPkgHandle());
 		$nh = Loader::helper('navigation');

@@ -1,3 +1,12 @@
+#download-tab {
+@include respond-to('small') {
+	display: inline-block;
+}
+	display: none;
+	position: absolute;
+	top: 50%;
+	right: 0;
+}
 #header-container {
 	header {
 		.content {
@@ -124,11 +133,13 @@
 	
 			}
 			#site-nav-toggle {
+
 				@include font-size(14);
 				text-decoration: none;
 				cursor: pointer;
 				padding: 10px 0;
-				display: block;
+			// removed 	display: block;
+			display: none;
 				text-align: right;
 				position: absolute;
 				right: percentage(20px / 960px);

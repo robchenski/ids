@@ -152,29 +152,6 @@
 	}	
 }
 #stepped-form {
-.headings .vert span {
-  transform: rotate(-90deg);
-  writing-mode:tb-rl;
-  white-space: nowrap;
-  width: 100%;
-  display: inline-block;
-	@include respond-to('small') {
-	  transform: none;
-	  writing-mode:tb-rl;
-	  white-space: normal;
-	}
-}
- 
-.headings {
-  vertical-align: bottom;
-}
- 
-.headings .vert {
- // white-space: nowrap;
-/*  > div {
-  	width: 100% !important;
-  }*/
-}
 	.row {
 		.ids-form-input-error {
 			border: 1px solid #f5aca6;
@@ -368,7 +345,10 @@
 				p {
 					&.col {
 						//flex-grow: 1;
-						display: table-cell;
+						@include respond-to('small') {
+							display: table-cell;
+						}
+						display: block;
 						width: 100%;
 						vertical-align: top;
 					}
@@ -453,6 +433,14 @@
 				}
 			}
 			#folding_doors_quote_details {
+
+				// DO MORE OF THESE
+				.form-inner {
+					margin-top: 78px;
+					@include respond-to('small') {
+						margin-top: 0;
+					}					
+				}
 				.frow {
 					> div {
 						&:nth-child(2), &:nth-child(7), &:nth-child(8) {width: 60%;}
@@ -527,7 +515,7 @@
 			#windows_quote_details,
 			#roofs_quote_details,
 			#glass_balustrades_quote_details {
-				display: none;
+				//display: none;
 			}
 
 		}

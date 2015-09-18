@@ -5,6 +5,11 @@ $this->inc('elements/header.php'); ?>
 		<div id="main-container" class="container default">
 			<main id="main" class="wrapper">
 				<div class="content">
+				<?php				
+				$full_width_page = $c->getCollectionAttributeValue('full_width_page');
+				// go for 1 cols - NO sidebar
+				if(!($full_width_page)) {
+				?>
 					<div class="left-col">
 						<?php
 						$a = new Area('Main');
@@ -46,10 +51,33 @@ $this->inc('elements/header.php'); ?>
 					    $a->setBlockWrapperEnd('</div>');
 						$as->display($c);
 						?>
-					</div> <!-- .right-col -->	
+					</div> <!-- .right-col -->
+				<?php
+				// 2 cols
+				} else {
+
+				?>
+					<div class="col">
+						<?php
+						$a = new Area('Main');
+					    //$a->setBlockWrapperStart('<div class="content">');
+					    //$a->setBlockWrapperEnd('</div>');
+						$a->display($c);
+						?>
+					</div>
+				<?php
+				}
+				?>
+	
 				</div> <!-- .content -->
 			</main>
 		</div> <!-- #main-container -->
 
+<?php 
+// show page quote section if attribute NOT set in page properties
+$hide_page_quote_section = $c->getCollectionAttributeValue('hide_page_quote_section');
+if(!($hide_page_quote_section)) {
+?>
 <?php $this->inc('elements/quote.php'); ?>
+<?php } ?>
 <?php $this->inc('elements/footer.php'); ?>
