@@ -193,6 +193,11 @@ class CustomContactFormBlockController extends BlockController {
 		$submission = new CustomContactFormSubmission($this->form_key, $page_cID);
 		$error = $submission->validate();
 		if (!$error->has()) {
+
+			// AND if certain stage error.. use as a trigger to - presave 
+			// $submission->preSave();
+			// 
+
 			$submission->save();
 			$this->sendNotificationEmail($submission);
 		}

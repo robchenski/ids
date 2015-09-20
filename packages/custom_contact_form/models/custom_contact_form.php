@@ -544,6 +544,9 @@ class CustomContactFormSubmission {
 			
 			$field_label = empty($field_def['label']) ? $name : $field_def['label'];
 			
+			// if $field_def is not empty stage
+			// and passes -- stage must be complete
+
 			if (empty($field_def['fileset'])) {
 				$field_is_set = array_key_exists($name, $this->field_values);
 				$field_is_empty = empty($this->field_values[$name]);
